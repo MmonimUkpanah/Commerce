@@ -100,7 +100,73 @@
           </div> -->
         </div>
       </div>
-      <div class="six">
+      <div class="five">
+        <div class="five1">
+          <p>{{waterMachinesCategory.name}}</p>
+        </div>
+        <div class="five2" >
+          <div class="five21" v-for="(cat, index) in waterMachinesCategory.products" :key="index">
+            <img :src= cat.photo_main alt="">
+            <p>{{cat.name}}</p>
+            <span>{{cat.description}} </span>
+            <span>${{cat.price}}</span>
+          </div>
+          <!-- <div class="five21">
+            <img src="/img/cl.svg" alt="">
+            <p>Solid Color Men Brown ...</p>
+            <span>$10,000 to $25,000  </span>
+          </div>
+          <div class="five21">
+            <img src="/img/cl.svg" alt="">
+            <p>Solid Color Men Brown ...</p>
+            <span>$10,000 to $25,000  </span>
+          </div>
+          <div class="five21">
+            <img src="/img/cl.svg" alt="">
+            <p>Solid Color Men Brown ...</p>
+            <span>$10,000 to $25,000  </span>
+          </div>
+          <div class="five21">
+            <img src="/img/cl.svg" alt="">
+            <p>Solid Color Men Brown ...</p>
+            <span>$10,000 to $25,000  </span>
+          </div> -->
+        </div>
+      </div>
+      <div class="five">
+        <div class="five1">
+          <p>{{healthCategory2.name}}</p>
+        </div>
+        <div class="five2" >
+          <div class="five21" v-for="(cat, index) in healthCategory2.products" :key="index">
+            <img :src= cat.photo_main alt="">
+            <p>{{cat.name}}</p>
+            <span>{{cat.description}} </span>
+            <span>${{cat.price}}</span>
+          </div>
+          <!-- <div class="five21">
+            <img src="/img/cl.svg" alt="">
+            <p>Solid Color Men Brown ...</p>
+            <span>$10,000 to $25,000  </span>
+          </div>
+          <div class="five21">
+            <img src="/img/cl.svg" alt="">
+            <p>Solid Color Men Brown ...</p>
+            <span>$10,000 to $25,000  </span>
+          </div>
+          <div class="five21">
+            <img src="/img/cl.svg" alt="">
+            <p>Solid Color Men Brown ...</p>
+            <span>$10,000 to $25,000  </span>
+          </div>
+          <div class="five21">
+            <img src="/img/cl.svg" alt="">
+            <p>Solid Color Men Brown ...</p>
+            <span>$10,000 to $25,000  </span>
+          </div> -->
+        </div>
+      </div>
+      <!-- <div class="six">
         <div class="six1">
           <p>Don't miss out on these offers!!!</p>
         </div>
@@ -222,7 +288,7 @@
           </div>
           
         </div>
-      </div>
+      </div> -->
       
     </div>
     <Footer/>
@@ -236,13 +302,17 @@ export default {
     return{
       categories:{},
       products:{},
-      healthCategory:{}
+      healthCategory:{},
+      waterMachinesCategory:{},
+      healthCategory2:{}
     }
   },
   mounted(){
     this.getCategories(),
     this.getProducts(),
-    this.getHealthCategory()
+    this.getHealthCategory(),
+    this.getWaterMachinesCategory(),
+    this.getHealthCategory2()
   },
   methods:{
     getCategories() {
@@ -269,6 +339,23 @@ export default {
           console.log(this.healthCategory)
         });
     },
+    getWaterMachinesCategory() {
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/12/")
+        .then((response) => {
+          console.log(response);
+          this.waterMachinesCategory = response.data;
+          console.log(this.waterMachinesCategory)
+        });
+    },
+    getHealthCategory2() {
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/15/")
+        .then((response) => {
+          console.log(response);
+          this.healthCategory2 = response.data;
+          console.log(this.healthCategory2)
+        });
+    },
+    
   }
 }
 </script>
@@ -421,6 +508,7 @@ export default {
   }
   .five21 img{
     width: 100%;
+    height: 224px;
   }
   .five21 p,span{
     font-weight: 700;
