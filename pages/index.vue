@@ -75,7 +75,7 @@
           <div class="five21" v-for="(cat, index) in healthCategory.products" :key="index">
             <img :src= cat.photo_main alt="">
             <p>{{cat.name}}</p>
-            <span>{{cat.description}} </span>
+            <!-- <span>{{cat.description}} </span> -->
             <span>${{cat.price}}</span>
           </div>
           <!-- <div class="five21">
@@ -108,7 +108,7 @@
           <div class="five21" v-for="(cat, index) in waterMachinesCategory.products" :key="index">
             <img :src= cat.photo_main alt="">
             <p>{{cat.name}}</p>
-            <span>{{cat.description}} </span>
+            <!-- <span>{{cat.description}} </span> -->
             <span>${{cat.price}}</span>
           </div>
           <!-- <div class="five21">
@@ -141,7 +141,7 @@
           <div class="five21" v-for="(cat, index) in healthCategory2.products" :key="index">
             <img :src= cat.photo_main alt="">
             <p>{{cat.name}}</p>
-            <span>{{cat.description}} </span>
+            <!-- <span>{{cat.description}} </span> -->
             <span>${{cat.price}}</span>
           </div>
           <!-- <div class="five21">
