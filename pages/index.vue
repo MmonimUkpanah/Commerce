@@ -1,31 +1,8 @@
 <template>
   <div>
     <div class="section">
-      <div class="one">
-        <div class="one1">
-          <p>Reach Us on Whatsapp</p> 
-          <p>+17045606540</p>
-        </div>
-      </div>
-      <div class="two">
-        <ul>
-          <li>About Us</li>
-          <li>How it Works</li>
-          <li>Features</li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
-      <div class="three">
-        <ul>
-          <li><img src="/img/tip.svg" alt="logo"></li>
-          <li><input type="search" name="" id=""></li>
-          <li><button>Search</button></li>
-          <li><span>Hi Prince</span> </li>
-          <li> <span>Help</span> </li>
-          <li> <span>Cart</span> </li>
-        </ul>
-      </div>
-      <div class="four">
+      <Navbar/>
+            <div class="four">
         <div class="four1">
           <div class="four2">
             <ul v-for="(cat,index) in categories" :key="index">
@@ -72,7 +49,7 @@
           <p>{{healthCategory.name}}</p>
         </div>
         <div class="five2" >
-          <div class="five21" v-for="(cat, index) in healthCategory.products" :key="index">
+          <div class="five21" v-for="(cat, index) in healthCategory.products" :key="index" @click="viewProduct(cat.id)">
             <img :src= cat.photo_main alt="">
             <p>{{cat.name}}</p>
             <!-- <span>{{cat.description}} </span> -->
@@ -105,7 +82,7 @@
           <p>{{waterMachinesCategory.name}}</p>
         </div>
         <div class="five2" >
-          <div class="five21" v-for="(cat, index) in waterMachinesCategory.products" :key="index">
+          <div class="five21" v-for="(cat, index) in waterMachinesCategory.products" :key="index" @click="viewProduct(cat.id)">
             <img :src= cat.photo_main alt="">
             <p>{{cat.name}}</p>
             <!-- <span>{{cat.description}} </span> -->
@@ -138,7 +115,7 @@
           <p>{{healthCategory2.name}}</p>
         </div>
         <div class="five2" >
-          <div class="five21" v-for="(cat, index) in healthCategory2.products" :key="index">
+          <div class="five21" v-for="(cat, index) in healthCategory2.products" :key="index" @click="viewProduct(cat.id)">
             <img :src= cat.photo_main alt="">
             <p>{{cat.name}}</p>
             <!-- <span>{{cat.description}} </span> -->
@@ -355,6 +332,10 @@ export default {
           console.log(this.healthCategory2)
         });
     },
+    viewProduct(product) {
+      this.$router.push(`/products/${product}`);
+    },
+    
     
   }
 }
@@ -505,6 +486,8 @@ export default {
   .five21{
     background: rgb(224, 242, 251);
     padding: 10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   .five21 img{
     width: 100%;
