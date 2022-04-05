@@ -5,18 +5,20 @@
             <div class="four">
         <div class="four1">
           <div class="four2">
-            <ul v-for="(cat,index) in categories" :key="index">
-              <li>{{cat.name}}</li>
-              <!-- <li>Health & Beauty</li>
-              <li>Home & Office</li>
-              <li>Phones & Tablets</li>
-              <li>Electronics & Computers</li>
-              <li>Fashion</li>
-              <li>Baby Products</li>
-              <li>Gaming</li>
-              <li>Automobiles</li>
-              <li>Other Categories</li> -->
-            </ul>
+            <h6>ATOMY    +</h6>
+            <p>- Beauty Product</p>
+            <p>- Body and Wellness</p>
+            <p>- Health Product</p>
+            <h6>ENERGIC    +</h6>
+            <p>- Beauty</p>
+            <p>- Body Wellness</p>
+            <p>- Health</p>
+            <h6>KANGEN    +</h6>
+            <p>- Water Machines</p>
+            <h6>SLEPM    +</h6>
+            <p>- Cleaning Machines</p>
+            <h6>RAINBOW REXAIR    +</h6>
+            <p>- Cleaning Machines</p>
           </div>
           <div class="four3">
             <div class="four31">
@@ -430,18 +432,13 @@ export default {
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
     border-radius: 10px 0px 0px 10px;
   }
-  .four2 ul li{
-    list-style: none;
-    font-weight: 500;
+  .four2 h6{
+    color: #4C67F5;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
   }
-  .four2 ul li::before{
-    content: "\2022";
-    color: #C4C4C4;
-    font-weight: bolder;
-    display: inline-block;
-    width: 1rem;
-    margin-right: 1rem;
-
+  .four2 p{
+    margin-bottom: 0.5rem;
   }
   .four31{
     display: grid;

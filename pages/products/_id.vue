@@ -23,17 +23,17 @@
           <div class="one32">
             <p>Share this product</p>
             <ul>
+              <!-- <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, nemo.</li>
               <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, nemo.</li>
               <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, nemo.</li>
-              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, nemo.</li>
-              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, nemo.</li>
+              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, nemo.</li> -->
             </ul>
           </div>
         </div>
         </div>
         
         <div class="one2">
-          <p>Delivery and Returns</p>
+          <!-- <p>Delivery and Returns</p>
           <p>Details</p>
           <p>Choose location</p>
           <input type="text">
@@ -45,17 +45,17 @@
           <p>Ready for delivery between 08 and 18th April when you order in the next 24hours </p>
            <p>Return Policy</p>
           <p>Delivery 2430</p>
-          <p>Ready for delivery between 08 and 18th April when you order in the next 24hours </p>
+          <p>Ready for delivery between 08 and 18th April when you order in the next 24hours </p> -->
         </div>
       </section>
       <section class="two">
         <div class="two1">
           <p id="product">Product Details</p>
           <hr>
-          <p>Lorem ipsum, Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quasi quos, rem temporibus maxime dicta similique ad incidunt iure perferendis labore, aperiam consectetur dolorem quis, vitae error assumenda voluptas reiciendis. Rem fugiat, architecto veritatis tempore rerum iusto aliquid, repudiandae adipisci enim sit placeat eum laborum iste. Tempora, porro. Consequuntur aspernatur vero accusamus iure exercitationem quas illo praesentium iste ipsam quasi. Est quisquam ullam rerum facilis rem excepturi fugit dolores ex earum amet nemo nisi, eius odit fuga neque natus quasi ipsam asperiores quis. Mollitia reiciendis laboriosam eaque fugiat magni molestiae aliquam, ratione placeat, deserunt veniam laudantium sunt voluptas explicabo commodi? dolor sit amet consectetur adipisicing elit. Velit excepturi porro sit, non numquam nesciunt eum, saepe ut praesentium a enim iure deleniti animi possimus, quidem voluptatibus ipsam earum? Praesentium laboriosam iste similique, fugit odio itaque, autem corporis dolorem veniam recusandae dolore dolorum corrupti distinctio rem soluta, a rerum ducimus.</p>
+          <p>{{product.description}}</p>
         </div>
         <div class="two2">
-          <p class="header">SELLER INFORMATION</p>
+          <!-- <p class="header">SELLER INFORMATION</p>
           <hr>
           <p class="header">MATUTU</p>
           <hr>
@@ -65,7 +65,7 @@
           <p class="header">Seller's Performance</p>
           <p>Order Fulfillment rate</p>
           <p>Quality Score: Average</p>
-          <p>Customer Rating: Average</p>
+          <p>Customer Rating: Average</p> -->
         </div>
       </section>
       <Footer/>
