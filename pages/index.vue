@@ -6,10 +6,10 @@
         <div class="four1">
           <div class="four2">
             <h6>ATOMY    +</h6>
-            <p>- Beauty Product</p>
-            <p>- Body and Wellness</p>
-            <p>- Health Product</p>
-            <h6>ENERGIC    +</h6>
+            <a href="/products/atomy/beauty"><p>- Beauty Products </p></a>
+            <a href="/products/atomy/body"><p>- Body and Wellness</p></a>
+            <a href="/products/atomy/health"><p>- Health Product</p></a>
+            <h6>ENAGIC    +</h6>
             <p>- Beauty</p>
             <p>- Body Wellness</p>
             <p>- Health</p>
