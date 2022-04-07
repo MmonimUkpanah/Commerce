@@ -10,15 +10,18 @@
             <a href="/products/atomy/body"><p>- Body and Wellness</p></a>
             <a href="/products/atomy/health"><p>- Health Product</p></a>
             <h6>ENAGIC    +</h6>
-            <p>- Beauty</p>
-            <p>- Body Wellness</p>
-            <p>- Health</p>
+            <a href="/products/enagic/beauty"><p>- Beauty</p></a>
+            <a href="/products/enagic/body"><p>- Body Wellness</p></a>
+            <a href="/products/enagic/health"><p>- Health</p></a>
             <h6>KANGEN    +</h6>
-            <p>- Water Machines</p>
-            <h6>SLEPM    +</h6>
-            <p>- Cleaning Machines</p>
+            <a href="/products/kangen/water"><p>- Water Machines</p></a>
+            <a href="/products/kangen/water"><p>- Health products</p></a>
             <h6>RAINBOW REXAIR    +</h6>
-            <p>- Cleaning Machines</p>
+            <a href="/products/rainbow/cleaningmachines"><p>- Cleaning Machines</p></a>
+            <a href="/products/rainbow/solutions"><p>- Cleaning Solutions</p></a>
+            <h6>SLEPM    +</h6>
+            <a href="/products/slepm/beauty"><p>- Beauty Products</p></a>
+            
           </div>
           <div class="four3">
             <div class="four31">
@@ -437,8 +440,10 @@ export default {
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
-  .four2 p{
+  .four2 p,a{
     margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: black;
   }
   .four31{
     display: grid;
