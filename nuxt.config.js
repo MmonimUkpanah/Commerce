@@ -38,6 +38,38 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next'
   ],
+  axios: {
+    // proxy: true
+    baseURL: "https://direshop777.herokuapp.com/",
+    // baseURL:"http://localhost:8000/api",
+    // headers: {
+    //   'Access-Control-Allow-Origin': '*',
+    //   'Access-Control-Allow-Headers': 'Content-Type',
+    //   'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
+    //   'Access-Control-Allow-Credentials': 'true'
+    // }
+  },
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          // required: true,
+          type: 'Bearer'
+        },
+        user: {
+          property: false,
+          autoFetch: false
+        },
+        endpoints: {
+          login: { url: '/accounts/login/', method: 'post' },
+          logout: { url: '/accounts/logout/', method: 'post' },
+          user: false,
+        }
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

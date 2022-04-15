@@ -12,6 +12,8 @@
           <li>How it Works</li>
           <li>Features</li>
           <li>Contact Us</li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign Up</a> </li>
         </ul>
       </div>
       <div class="three">
@@ -55,7 +57,7 @@
     padding-top: 3px;
     padding-bottom: 3px;
   }
-  .two ul li{
+  .two ul li,a{
     display: inline;
     list-style: none;
     color: #6A88CA;

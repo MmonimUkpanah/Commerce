@@ -35,9 +35,9 @@
             <div class="sin2">
               <div class="sin21" >
                 <p> {{pro.name}}</p>
-              <p>{{pro.description}} </p>
+              <!-- <p>{{pro.description}} </p> -->
               
-                    <p>4678</p>
+                    <p>${{pro.price}}</p>
               </div>
               
                     <button>PRODUCT DETAILS</button>

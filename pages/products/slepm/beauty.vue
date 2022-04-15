@@ -37,7 +37,7 @@
                 <p> {{pro.name}}</p>
               
               
-                    <p>4678</p>
+                    <p>${{pro.price}}</p>
               </div>
               
                     <button>PRODUCT DETAILS</button>
