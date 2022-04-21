@@ -22,6 +22,14 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+  
+    // {
+    //   src: "./plugins/vue-sweet-alert.js",
+    //   ssr: false
+    // },
+    
+    
+    
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,7 +44,8 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    'vue-sweetalert2/nuxt'
   ],
   axios: {
     // proxy: true
@@ -55,18 +64,22 @@ export default {
         token: {
           property: 'token',
           global: true,
-          // required: true,
-          type: 'Bearer'
+          required: true,
+          type: 'token'
         },
         user: {
-          property: false,
-          autoFetch: false
+          property: '',
+          autoFetch: true,
+          global: true,
         },
+        
         endpoints: {
-          login: { url: '/accounts/login/', method: 'post' },
+          login: { url: '/accounts/login/', method: 'post', propertyName:"token"  },
           logout: { url: '/accounts/logout/', method: 'post' },
-          user: false,
-        }
+          user: { url: '/accounts/userI/', method: 'get'  },
+        },
+        
+        
       }
     }
   },

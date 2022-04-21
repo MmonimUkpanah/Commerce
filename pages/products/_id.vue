@@ -5,12 +5,12 @@
         <div class="one0">
           <div class="one1">
           <div class="one11">
-            <img :src= product.photo_main alt="">
+            <img :src= products.photo_main alt="">
           </div>
           <div class="one12">
-            <p id="one121">{{product.name}}</p>
+            <p id="one121">{{products.name}}</p>
             <hr>
-            <p>${{product.price}}</p> 
+            <p>${{products.price}}</p> 
             <button @click="addToCart()">ADD TO CART</button>
           </div>
         </div>
@@ -52,7 +52,7 @@
         <div class="two1">
           <p id="product">Product Details</p>
           <hr>
-          <p>{{product.description}}</p>
+          <p>{{products.description}}</p>
         </div>
         <div class="two2">
           <!-- <p class="header">SELLER INFORMATION</p>
@@ -197,7 +197,13 @@
 export default {
     data(){
         return{
-          product:{}
+          products:{},
+          product:{
+            product:0,
+            ordered: true,
+            quantity: 1,
+          }
+
         }
     },
     mounted(){
@@ -210,31 +216,37 @@ export default {
           `https://direshop777.herokuapp.com/api/products/${this.$route.params.id}`
         );
         
-        this.product = response.data;
-        console.log(this.product)
+        this.products = response.data;
+        this.product.product = response.data.id
+        console.log(this.product.product)
         
       } catch (error) {
         console.error(error);
-        this.$message({
-          message: error,
-          type: "warning",
-        });
+        
       }
     },
       async addToCart() {
-      try {
+      
+      if (this.$auth.loggedIn == true){
+        try {
         const response = await this.$axios.post(
-          "https://direshop777.herokuapp.com/api/carts/"
+          "https://direshop777.herokuapp.com/api/carts/", this.product
         );
         
         console.log(response)
+        this.$swal({ 
+                icon: 'success',
+                text: "Successfully added item to cart👍",
+                showConfirmButton: false,
+                timer: 2500
+                })   
         
       } catch (error) {
         console.error(error);
-        this.$message({
-          message: error,
-          type: "warning",
-        });
+        
+      }
+      }else{
+        this.$router.push("/login");
       }
     },
     }

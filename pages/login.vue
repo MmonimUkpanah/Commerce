@@ -54,49 +54,19 @@ export default {
         console.log(response);
         this.$auth.setUser(response.data.user)
         this.$auth.setUserToken(response.data.token);
-        this.$auth.strategy.token.set(response.data.token)
+        //  localStorage.setItem('token', response.data.token)
+        // this.$auth.strategy.token.set(response.data.token)
+        // this.$store.state.localStorage.token = response.data.token
         console.log(this.$auth.user)
+        // console.log(this.$auth.UserToken)
         console.log(this.$auth.loggedIn)
-        // this.$auth.setUser(response.data.data.user);
-        // if (response.data.data.user.role.name == "creator") {
-        //   // this.isLoading = false;
-        //   console.log(response.data.data.token);
-        //   this.$auth.setUserToken(response.data.data.token);
-        //   this.$router.push("/creator_dashboard/dashboard");
+        this.$router.push("/");
 
-        //   console.log(this.$auth.loggedIn);
-        //   this.$message({
-        //     message: "Welcome back",
-        //     type: "success",
-        //   });
-        //   // this.$auth.setUser(response.data.data.user)
-        //   this.$router.push("/creator_dashboard/dashboard");
-        //   //  this.$toast.success('Successfully authenticated');
-        // } else if (response.data.data.user.role.name == "customer") {
-        //   this.$auth.setUserToken(response.data.data.token);
-        //   // this.$auth.setUser(response.data.data.user);
-        //   this.$router.push("/userdashboard/dashboard");
-        //   console.log(this.$auth.loggedIn);
-        //   this.$message({
-        //     message: "Welcome back",
-        //     type: "success",
-        //   });
-        //   //  this.$toast.success(response.data.message);
-        // } else {
-        //   this.$message({
-        //     message: "Incorrect password or email",
-        //     type: "success",
-        //   });
-        // }
-      } catch (err) {
-        // this.isLoading=false;
-        // this.loading = false;
-        console.log(err);
-        // this.$message({
-        //   message: err.response.data.data,
-        //   type: "warning",
-        // });
-        // this.$toast.error('Error while authenticating');
+
+      } catch (error) {
+        
+        console.log(error);
+        
       }
     },
   }
