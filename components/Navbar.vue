@@ -23,11 +23,26 @@
           <li><button>Search</button></li>
           <li><span>Hi Prince</span> </li>
           <li> <span>Help</span> </li>
-          <li> <span>Cart</span> </li>
+          <li @click="viewCart()"> <span>Cart</span> </li>
         </ul>
       </div>
     </section>
 </template>
+
+
+<script>
+export default {
+  methods:{
+    viewCart(){
+      if (this.$auth.loggedIn == true){
+        this.$router.push('/cart')
+      }else{
+        this.$router.push('/login')
+      }
+    }
+  }
+}
+</script>
 
 
 

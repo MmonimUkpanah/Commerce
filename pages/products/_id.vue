@@ -11,7 +11,19 @@
             <p id="one121">{{products.name}}</p>
             <hr>
             <p>${{products.price}}</p> 
-            <button @click="addToCart()">ADD TO CART</button>
+            <!-- <button @click="addToCart()">ADD TO CART</button> -->
+            <div>
+              <b-button v-b-modal.modal-1>Add to Cart</b-button>
+
+              <b-modal id="modal-1" title="Quantity">
+                <form  method="post" @submit.prevent="addToCart()">
+                  <label for="quantity">Quantity</label>
+                  <input type="number" min="1" required v-model="product.quantity">
+                  <button type="submit">ADD TO CART</button>
+                </form>
+              </b-modal>
+            </div>
+
           </div>
         </div>
         <hr>
@@ -94,15 +106,15 @@
   }
   .one11 img{
     width: 100%;
-    
+    height: 20rem;
   }
-  .one12 button{
+  .one12 button, b-button{
     background: #4C67F5;
     color: #fff;
     width: 100%;
     border: none;
     padding: 5px;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   #one121{
     font-weight: 700;
@@ -153,6 +165,23 @@
   .two2 .header{
     font-weight: 500;
   }
+ 
+   #modal-1 input{
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+   #modal-1 button{
+    background: #4C67F5;
+    color: #fff;
+    width: 100%;
+    border: none;
+    padding: 5px;
+    margin-top: 1rem;
+  }
+  
+
 
 
 
