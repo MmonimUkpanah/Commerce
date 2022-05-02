@@ -27,8 +27,9 @@ export default {
     //   src: "./plugins/vue-sweet-alert.js",
     //   ssr: false
     // },
+    // { src: '~/plugins/paypal.js', ssr: false }
     
-    
+    { src: "~/plugins/paypal.client.js" }
     
   ],
 
@@ -76,7 +77,7 @@ export default {
         endpoints: {
           login: { url: '/accounts/login/', method: 'post', propertyName:"token"  },
           logout: { url: '/accounts/logout/', method: 'post' },
-          user: { url: '/accounts/userI/', method: 'get'  },
+          user: { url: '/accounts/user/', method: 'get'  },
         },
         
         
@@ -86,5 +87,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // vendor: [
+    //   'vue-paypal-checkout'
+    // ],
+    vendor: ["vue-paypal-checkout"]
   }
 }

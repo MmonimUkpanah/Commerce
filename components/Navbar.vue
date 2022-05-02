@@ -24,6 +24,7 @@
           <li><span>Hi Prince</span> </li>
           <li> <span>Help</span> </li>
           <li @click="viewCart()"> <span>Cart</span> </li>
+          <li @click="$auth.logout()"> <span>Log Out</span> </li>
         </ul>
       </div>
     </section>
@@ -38,6 +39,14 @@ export default {
         this.$router.push('/cart')
       }else{
         this.$router.push('/login')
+      }
+    },
+    async logOut() {
+      try {
+        let response = await this.$auth.logoutWith("local");
+        console.log(response)
+      } catch (err) {
+        console.log(err)
       }
     }
   }
@@ -96,7 +105,7 @@ export default {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    width: 450px;
+    width: 400px;
     padding: 4px 5px;
     margin-right: 1rem;
   }
