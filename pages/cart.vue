@@ -46,8 +46,8 @@
                 <div>
                     <b-button v-b-modal.modal-1>Checkout Information</b-button>
 
-                    <b-modal id="modal-1" title="Checkout">
-                        <form method="post" @submit.prevent="checkOut()">
+                    <b-modal id="modal-1" title="Checkout"  @ok="checkOut()">
+                        <form method="post">
                             <label for="Shipping Address">Shipping Address</label>
                             <input type="text" v-model="checkoutInfo.address" required>
                             <label for="Gender">Gender</label>
@@ -66,7 +66,7 @@
                             </select> -->
                             <label for="Zip Code">Zip Code</label>
                             <input type="text" v-model="checkoutInfo.zip" required>
-                            <button type="submit">Checkout</button>
+                            
                         </form>
                     </b-modal>
                 </div>
