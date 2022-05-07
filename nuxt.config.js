@@ -29,8 +29,8 @@ export default {
     // },
     // { src: '~/plugins/paypal.js', ssr: false }
     
-    { src: "~/plugins/paypal.client.js" }
-    
+    // { src: "~/plugins/paypal.client.js" }
+    { src: '~/plugins/paypal.js', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -90,6 +90,11 @@ export default {
     // vendor: [
     //   'vue-paypal-checkout'
     // ],
-    vendor: ["vue-paypal-checkout"]
+    vendor: ["vue-paypal-checkout"],
+    extend(config, {}) {
+      config.node = {
+          fs: 'empty'
+      }
+  }
   }
 }

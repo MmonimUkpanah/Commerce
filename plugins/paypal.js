@@ -1,3 +1,5 @@
-// import Vue from 'vue'
-// import PayPal from 'vue-paypal-checkout'
-// Vue.component('paypal-checkout', PayPal)
+import Vue from 'vue'
+import braintree from 'braintree-web'
+import paypal from 'paypal-checkout'
+Vue.prototype.$Braintree = braintree
+Vue.prototype.$Paypal = paypal

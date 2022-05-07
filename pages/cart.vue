@@ -3,6 +3,11 @@
     <div>
 <!-- includes jQuery -->
 <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<!-- includes the Braintree JS client SDK -->
+                    <script src="https://js.braintreegateway.com/web/dropin/1.33.1/js/dropin.min.js"></script>
+
+                    <!-- includes jQuery -->
+                    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
         <Navbar/>
         <div class="cart">
             <div class="cart1">
@@ -44,9 +49,9 @@
                     <b-modal id="modal-1" title="Checkout">
                         <form method="post" @submit.prevent="checkOut()">
                             <label for="Shipping Address">Shipping Address</label>
-                            <input type="text" v-model="checkoutInfo.address">
+                            <input type="text" v-model="checkoutInfo.address" required>
                             <label for="Gender">Gender</label>
-                            <select class="form-select" v-model="checkoutInfo.gender" aria-label="Default select example">
+                            <select class="form-select" v-model="checkoutInfo.gender" aria-label="Default select example" required>
                                 <option selected disabled>Open this select menu</option>
                                 <option value='M'>Male</option>
                                 <option value='F'>Female</option>
@@ -60,46 +65,19 @@
                                 
                             </select> -->
                             <label for="Zip Code">Zip Code</label>
-                            <input type="text" v-model="checkoutInfo.zip">
+                            <input type="text" v-model="checkoutInfo.zip" required>
                             <button type="submit">Checkout</button>
                         </form>
                     </b-modal>
                 </div>
-                <!-- <form>
-                       <div class="form-group">
-                           <label for="amount">Amount</label>
-                           <div class="input-group">
-                               <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                               <input type="number" id="amount" class="form-control" placeholder="Enter Amount">
-                           </div>
-                       </div>
-                        <hr />
-                       <div class="form-group">
-                           <label>Credit Card Number</label>
-                           <div id="creditCardNumber" class="form-control"></div>
-                       </div>
-                       <div class="form-group">
-                           <div class="row">
-                               <div class="col-6">
-                                   <label>Expire Date</label>
-                                   <div id="expireDate" class="form-control"></div>
-                               </div>
-                               <div class="col-6">
-                                   <label>CVV</label>
-                                   <div id="cvv" class="form-control"></div>
-                               </div>
-                           </div>
-                       </div>
-                       <button class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">Pay with Credit Card</button>
-                       <hr />
-                       <div id="paypalButton"></div>
-                   </form> -->
+                
                    <div >
-        <div class="">
+                    <div class="">
+        <div class="mt-3" id="myDIV">
             <div class="card bg-light">
                 <div class="card-header">Payment Information</div>
                 <div class="card-body">
-                    <div class="alert alert-success" v-if="nonce">
+                    <div class="alert alert-success" v-if="checkoutInfo.payment_method_nonce">
                         Successfully generated nonce.
                     </div>
                     <div class="alert alert-danger" v-if="error">
@@ -132,26 +110,12 @@
                         </div>
                         <button class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">Pay with Credit Card</button>
                         <hr />
-                        <div >
-                            <no-ssr>
-                                <paypal-checkout
-                                :amount= "amount"
-                                currency="USD"
-                                :client="credentials"
-                                env="sandbox"
-                                :button-style="myStyle"
-                                v-on:payment-authorized="paymentAuthorized"
-                                v-on:payment-completed="paymentCompleted"
-                                v-on:payment-cancelled="paymentCancelled">
-                                
-
-                                </paypal-checkout>
-                            </no-ssr>
-                        </div>
+                        <div id="paypalButton"></div>
                     </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
                 
 
@@ -206,6 +170,9 @@ form input, select{
     width: 100%;
     padding: 0.7;
 }
+#myDIV{
+    display: none;
+}
 
 
 
@@ -243,11 +210,11 @@ form input, select{
 
 
 <script>
-import braintree from 'braintree-web';
-
+// import braintree from 'braintree-web';
+// import braintree from 'braintree';
 export default {
     components:{
-        braintree, 
+        
         
         
     },
@@ -257,15 +224,15 @@ export default {
             summary:{},
             user:{},
             checkoutInfo:{
-               
+               payment_method_nonce:null
             },
             config:{},
             countries:{},
             client_token:'',
             hostedFieldInstance: false,
-            nonce: "",
+            checkedOut:false,
             error: "",
-            amount:null,
+            amount:'',
             credentials:{
                 sandbox: 'AdDYh_OGgKNgOj-w2KWXBMNWy0VNM7snxskM_61rCgHsa21f7S-mMi6edZwDB528zoTPwI6mAQ9om6Rm',
                 production:''
@@ -284,67 +251,95 @@ export default {
         }
     },
     mounted(){
-        
         this.getCart(),
         this.getOrderSummary(),
         this.getTreeConfig(),
         this.getCountries(),
         this.getClientToken()
+        this.$Braintree.client.create({
+            authorization: "sandbox_s96mdk2n_x8k6mngqj2qz555h"
+        })
+        .then(clientInstance => {
+            let options = {
+                client: clientInstance,
+                styles: {
+                    input: {
+                        'font-size': '14px',
+                        'font-family': 'Open Sans'
+                    }
+                },
+                fields: {
+                    number: {
+                        selector: '#creditCardNumber',
+                        placeholder: 'Enter Credit Card'
+                    },
+                    cvv: {
+                        selector: '#cvv',
+                        placeholder: 'Enter CVV'
+                    },
+                    expirationDate: {
+                        selector: '#expireDate',
+                        placeholder: '00 / 0000'
+                    }
+                }
+            }
+            return Promise.all([
+                this.$Braintree.hostedFields.create(options),
+                this.$Braintree.paypalCheckout.create({ client: clientInstance })
+            ])
+        })
+        .then(instances => {
+            const hostedFieldInstance    = instances[0];
+            const paypalCheckoutInstance = instances[1];
+            // Use hostedFieldInstance to send data to Braintree
+            this.hostedFieldInstance = hostedFieldInstance;
+            // Setup PayPal Button
+                return this.$Paypal.Button.render({
+                    env: 'sandbox',
+                    style: {
+                        label: 'paypal',
+                        size: 'responsive',
+                        shape: 'rect'
+                    },
+                    payment: () => {
+                        return paypalCheckoutInstance.createPayment({
+                                flow: 'checkout',
+                                intent: 'sale',
+                                amount: parseFloat(this.amount) > 0 ? this.amount : 10,
+                                displayName: 'Braintree Testing',
+                                currency: 'USD'
+                        })
+                    },
+                    onAuthorize: (data, options) => {
+                        return paypalCheckoutInstance.tokenizePayment(data).then(payload => {
+                            console.log(payload);
+                            this.error = "";
+                            this.checkoutInfo.payment_method_nonce = payload.nonce;
+                        })
+                    },
+                    onCancel: (data) => {
+                        console.log(data);
+                        console.log("Payment Cancelled");
+                    },
+                    onError: (err) => {
+                        console.error(err);
+                        this.error = "An error occurred while processing the paypal payment.";
+                    }
+                }, '#paypalButton')
+        })
+        .catch(err => {
+            console.log(err)
+        });
+    
 
-   braintree.client.create({
-           authorization: "sandbox_s96mdk2n_x8k6mngqj2qz555h"
-       })
-       .then(clientInstance => {
-           let options = {
-               client: clientInstance,
-               styles: {
-                   input: {
-                       'font-size': '14px',
-                       'font-family': 'Open Sans'
-                   }
-               },
-               fields: {
-                   number: {
-                       selector: '#creditCardNumber',
-                       placeholder: 'Enter Credit Card'
-                   },
-                   cvv: {
-                       selector: '#cvv',
-                       placeholder: 'Enter CVV'
-                   },
-                   expirationDate: {
-                       selector: '#expireDate',
-                       placeholder: '00 / 0000'
-                   }
-               }
-           }
-           return braintree.hostedFields.create(options)
-       })
-       .then(hostedFieldInstance => {
-           // @TODO - Use hostedFieldInstance to send data to Braintree
-           this.hostedFieldInstance = hostedFieldInstance;
-       })
-       .catch(err => {
-           console.log(err)
-       });
-       if (process.client){
-            const Paypal =()=> import('vue-paypal-checkout')
-            console.log(window.innerWidth, window.innerHeight);
-        }
-   
-        
-        
+
+
+
+
+
+ 
     },
     methods:{
-    paymentAuthorized(value){
-       console.log(value)
-   },
-   paymentCompleted(value){
-       console.log(value)
-   },
-   paymentCancelled(value){
-       console.log(value)
-   },
         getCart() {
       this.$axios.get( "https://direshop777.herokuapp.com/api/carts/")
         .then((response) => {
@@ -352,6 +347,12 @@ export default {
           this.items = response.data;
           console.log(this.items)
         });
+    },
+    pay(){
+        const response = this.$axios.post(
+            'https://direshop777.herokuapp.com/api/checkout/', this.checkoutInfo  
+            );
+            console.log(response.data);
     },
     getOrderSummary() {
       this.$axios.get( "https://direshop777.herokuapp.com/api/order-summary/")
@@ -366,7 +367,7 @@ export default {
           this.checkoutInfo.country = response.data[0].country;
           this.checkoutInfo.paid = response.data[0].paid;
           this.user = this.$auth.user,
-          this.amount = response.data[0].total;
+          this.amount = response.data[0].total.toString();
           this.checkoutInfo.first_name = this.user.first_name;
           this.checkoutInfo.last_name = this.user.surname;
           console.log(this.amount)
@@ -399,33 +400,49 @@ export default {
         });
     },
         async checkOut() {
-        try {
-            const response = await this.$axios.post(
-            'https://direshop777.herokuapp.com/api/checkout/', this.checkoutInfo  
-            );
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }   
+        document.getElementById("myDIV").style.display = "block";
       
     },
-    payWithCreditCard() {
-       if(this.hostedFieldInstance)
-       {
-            this.error = "";
-       this.nonce = "";
-           this.hostedFieldInstance.tokenize().then(payload => {
-               console.log(payload);
-               this.nonce = payload.nonce
-           })
-           .catch(err => {
-               console.error(err);
-              this.error = err.message;
-           })
-       }
-   },
+    // payWithCreditCard() {
+    //         if(this.hostedFieldInstance)
+    //         {
+    //             this.error = "";
+    //             this.nonce = "";
+    //             this.hostedFieldInstance.tokenize().then(payload => {
+    //                 console.log(payload);
+    //                 this.nonce = payload.nonce;
+    //             })
+    //             .catch(err => {
+    //                 console.error(err);
+    //                 this.error = err.message;
+    //             })
+    //         }
+    //     }
+        async payWithCreditCard() {
+        try {
+            if(this.hostedFieldInstance)
+            {
+                this.error = "";
+                this.checkoutInfo.payment_method_nonce = "";
+                this.hostedFieldInstance.tokenize().then(payload => {
+                    console.log(payload);
+                    this.checkoutInfo.payment_method_nonce = payload.nonce;
+                })
+                
+            }
+        } catch (error) {
+            console.error(error);
+            this.error = error.message;
+        }   finally {
+        setTimeout(() => { this.pay() },5000)
+         
+        }
+      
+    },
+    
    
     },
+    
     
 }
 </script>
