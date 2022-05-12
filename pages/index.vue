@@ -417,7 +417,7 @@ export default {
     display: none;
   }
   .four{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -437,7 +437,7 @@ export default {
     border-radius: 10px 0px 0px 10px;
   }
   .four2 h6{
-    color: #4C67F5;
+    color:  #94004F;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -470,7 +470,7 @@ export default {
     
   }
   .five{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 5rem;
     padding-top:1rem ;
   }

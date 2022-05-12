@@ -2,7 +2,7 @@
     <footer>
         <section class="finito">
             <div class="one">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae neque quod blanditiis cum ducimus beatae laboriosam molestiae magnam corporis veritatis incidunt voluptatum perferendis pariatur delectus quia tempora excepturi, dignissimos dolor!</p>
+                <img src="/img/head.png" alt="logo">
                 <button>Start Live Chat</button>
             </div>
             <div class="two">
@@ -42,6 +42,8 @@
 <style scoped>
     footer{
         padding: 2rem 5rem;
+        background: #000000;
+        color: white;
     }
     .finito{
         display: grid;
@@ -52,15 +54,18 @@
     .title{
         font-weight: 500;
     }
-    .one{
-        margin-top: 2.5rem;
+    
+    .one img{
+        width: 5rem;
     }
     .one button{
-        background: #2563EB;
+        background: #94004F;
         border-radius: 5px;
         padding: 5px 20px;
         border: none;
         color: white;
+        display: block;
+        margin-top: 1rem;
     }
 
 

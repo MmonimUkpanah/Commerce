@@ -1,12 +1,12 @@
 <template>
     <section>
         <div class="one">
-        <div class="one1">
+        <!-- <div class="one1">
           <p>Reach Us on Whatsapp</p> 
           <p>+17045606540</p>
-        </div>
+        </div> -->
       </div>
-      <div class="two">
+      <!-- <div class="two">
         <ul>
           <li>About Us</li>
           <li>How it Works</li>
@@ -15,15 +15,16 @@
           <li><a href="/login">Login</a></li>
           <li><a href="/signup">Sign Up</a> </li>
         </ul>
-      </div>
+      </div> -->
       <div class="three">
         <ul>
-          <li><img src="/img/tip.svg" alt="logo"></li>
+          <li><img src="/img/head.png" alt="logo"></li>
           <li><input type="search" name="" id=""></li>
           <li><button>Search</button></li>
           <li><span>Hi Prince</span> </li>
-          <li> <span>Help</span> </li>
           <li @click="viewCart()"> <span>Cart</span> </li>
+          <li><span><a href="/login">Login</a></span></li>
+          <li><span><a href="/signup">Sign Up</a> </span></li>
           <li @click="$auth.logout()"> <span>Log Out</span> </li>
         </ul>
       </div>
@@ -89,7 +90,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 5rem;
   }
   .three li{
@@ -97,7 +98,8 @@ export default {
     display: inline;
   }
   .three li img{
-    margin-right: 11rem;
+    margin-right: 5rem;
+    width: 5rem;
   }
   .three li input{
     background: #FFFFFF;
@@ -105,20 +107,26 @@ export default {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    width: 400px;
+    width: 300px;
     padding: 4px 5px;
     margin-right: 1rem;
   }
   .three li button{
-    background: #698EDE;
+    background: #FBA100;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
+    color: white;
   }
   .three li span{
-    margin-left: 3rem;
+    margin-left: 2rem;
     font-size: 20px;
     font-weight: 500;
+    color: white;
+  }
+  a{
+    color: white;
+    text-decoration: none;
   }
   .threesmall{
     display: none;
