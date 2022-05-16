@@ -9,16 +9,15 @@
             <a href="/products/atomy/beauty"><p>- Beauty Products </p></a>
             <a href="/products/atomy/body"><p>- Body and Wellness</p></a>
             <a href="/products/atomy/health"><p>- Health Product</p></a>
-            <h6>ENAGIC    +</h6>
-            <a href="/products/enagic/beauty"><p>- Beauty</p></a>
-            <a href="/products/enagic/body"><p>- Body Wellness</p></a>
-            <a href="/products/enagic/health"><p>- Health</p></a>
-            <h6>KANGEN    +</h6>
-            <a href="/products/kangen/water"><p>- Water Machines</p></a>
-            <a href="/products/kangen/water"><p>- Health products</p></a>
+            <h6>ENAGIC KANGEN   +</h6>
+            <a href="/products/enagic/water"><p>- Water Machines</p></a>
+            <a href="/products/enagic/health"><p>- Supplements</p></a>
             <h6>RAINBOW REXAIR    +</h6>
             <a href="/products/rainbow/cleaningmachines"><p>- Cleaning Machines</p></a>
             <a href="/products/rainbow/solutions"><p>- Cleaning Solutions</p></a>
+            <h6>QUIARI    +</h6>
+            <a href="/products/quiari/energy"><p>- Quiari Energy</p></a>
+            <a href="/products/quiari/shake"><p>- Quiari Shake</p></a>
             <h6>SLEPM    +</h6>
             <a href="/products/slepm/beauty"><p>- Beauty Products</p></a>
             
@@ -51,227 +50,94 @@
       </div>
       <div class="five">
         <div class="five1">
-          <p>{{healthCategory.name}}</p>
+          <div class="five11">
+            <p>Atomy Beauty Products</p>
+          </div>
+          <div class="five12">
+            <p><a href="/products/atomy/beauty">View More >></a> </p>
+          </div>
         </div>
         <div class="five2" >
-          <div class="five21" v-for="(cat, index) in healthCategory.products" :key="index" @click="viewProduct(cat.id)">
+          <div class="five21" v-for="(cat, index) in computedAtomy" :key="index" @click="viewProduct(cat.id)">
             <img :src= cat.photo_main alt="">
             <p>{{cat.name}}</p>
-            <!-- <span>{{cat.description}} </span> -->
             <span>${{cat.price}}</span>
-          </div>
-          <!-- <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div> -->
-        </div>
-      </div>
-      <div class="five">
-        <div class="five1">
-          <p>{{waterMachinesCategory.name}}</p>
-        </div>
-        <div class="five2" >
-          <div class="five21" v-for="(cat, index) in waterMachinesCategory.products" :key="index" @click="viewProduct(cat.id)">
-            <img :src= cat.photo_main alt="">
-            <p>{{cat.name}}</p>
-            <!-- <span>{{cat.description}} </span> -->
-            <span>${{cat.price}}</span>
-          </div>
-          <!-- <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div> -->
-        </div>
-      </div>
-      <div class="five">
-        <div class="five1">
-          <p>{{healthCategory2.name}}</p>
-        </div>
-        <div class="five2" >
-          <div class="five21" v-for="(cat, index) in healthCategory2.products" :key="index" @click="viewProduct(cat.id)">
-            <img :src= cat.photo_main alt="">
-            <p>{{cat.name}}</p>
-            <!-- <span>{{cat.description}} </span> -->
-            <span>${{cat.price}}</span>
-          </div>
-          <!-- <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div>
-          <div class="five21">
-            <img src="/img/cl.svg" alt="">
-            <p>Solid Color Men Brown ...</p>
-            <span>$10,000 to $25,000  </span>
-          </div> -->
-        </div>
-      </div>
-      <!-- <div class="six">
-        <div class="six1">
-          <p>Don't miss out on these offers!!!</p>
-        </div>
-        <div class="six2">
-          <div class="six21">
-            <img src="/img/so.svg" alt="">
-          </div>
-          <div class="six21">
-            <img src="/img/so.svg" alt="">
-          </div>
-          <div class="six21">
-            <img src="/img/so.svg" alt="">
-          </div>
-          <div class="six21">
-            <img src="/img/so.svg" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="seven">
-        <div class="seven1">
-          <p>Top Categories</p>
-        </div>
-        <div class="seven2">
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/a.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/b.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/c.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/a.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/b.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/c.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/a.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/b.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/c.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/a.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/b.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
-          </div>
-          <div class="seven21">
-            <div class="seven22">
-              <img src="/img/c.svg" alt="">
-            </div>
-            <div class="seven23">
-              <p>Phone Accessories</p>
-            </div>
           </div>
           
         </div>
-      </div> -->
-      
+      </div>
+      <div class="five">
+        <div class="five1">
+          <div class="five11">
+            <p>Enagic Kangen Water Machines</p>
+          </div>
+          <div class="five12">
+            <p><a href="/products/enagic/water">View More >></a></p>
+          </div>
+        </div>
+        <div class="five2" >
+          <div class="five21" v-for="(cat, index) in computedEnagic" :key="index" @click="viewProduct(cat.id)">
+            <img :src= cat.photo_main alt="">
+            <p>{{cat.name}}</p>
+            <span>${{cat.price}}</span>
+          </div>
+          
+        </div>
+      </div>
+      <div class="five">
+        <div class="five1">
+          <div class="five11">
+            <p>Rainbow Rexair Cleaning Machines</p>
+          </div>
+          <div class="five12">
+            <p><a href="/products/rainbow/cleaningmachines">View More >></a></p>
+          </div>
+        </div>
+        <div class="five2" >
+          <div class="five21" v-for="(cat, index) in computedRainbow" :key="index" @click="viewProduct(cat.id)">
+            <img :src= cat.photo_main alt="">
+            <p>{{cat.name}}</p>
+            <span>${{cat.price}}</span>
+          </div>
+          
+        </div>
+      </div>
+      <div class="five">
+        <div class="five1">
+          <div class="five11">
+            <p>Slepm Beauty Products</p>
+          </div>
+          <div class="five12">
+            <p><a href="/products/slepm/beauty">View More >></a></p>
+          </div>
+        </div>
+        <div class="five2" >
+          <div class="five21" v-for="(cat, index) in computedSlepm" :key="index" @click="viewProduct(cat.id)">
+            <img :src= cat.photo_main alt="">
+            <p>{{cat.name}}</p>
+            <span>${{cat.price}}</span>
+          </div>
+          
+        </div>
+      </div>
+      <div class="five">
+        <div class="five1">
+          <div class="five11">
+            <p>Quiari Energy Shake</p>
+          </div>
+          <div class="five12">
+            <p><a href="/products/quiari/energy">View More >></a></p>
+          </div>
+        </div>
+        <div class="five2" >
+          <div class="five21" v-for="(cat, index) in computedQ" :key="index" @click="viewProduct(cat.id)">
+            <img :src= cat.photo_main alt="">
+            <p>{{cat.name}}</p>
+            <span>${{cat.price}}</span>
+          </div>
+          
+        </div>
+      </div>
     </div>
     <Footer/>
   </div>
@@ -286,15 +152,42 @@ export default {
       products:{},
       healthCategory:{},
       waterMachinesCategory:{},
-      healthCategory2:{}
+      healthCategory2:{},
+      limit: 6,
+      atomy:[],
+      enagic:[],
+      rainbow:[],
+      slepm:[],
+      q:[]
     }
   },
   mounted(){
     this.getCategories(),
     this.getProducts(),
-    this.getHealthCategory(),
-    this.getWaterMachinesCategory(),
-    this.getHealthCategory2()
+    this.getAtomyBeauty(),
+    this.getEnagicBody(),
+    this.getRainbow(),
+    this.getSlepm(),
+    this.getQ()
+    // this.getWaterMachinesCategory(),
+    // this.getHealthCategory2()
+  },
+  computed:{
+    computedAtomy(){
+    return this.limit ? this.atomy.slice(0,this.limit) : this.atomy
+  },
+  computedEnagic(){
+    return this.limit ? this.enagic.slice(0,this.limit) : this.enagic
+  },
+   computedRainbow(){
+    return this.limit ? this.rainbow.slice(0,this.limit) : this.rainbow
+  },
+   computedSlepm(){
+    return this.limit ? this.slepm.slice(0,this.limit) : this.slepm
+  },
+  computedQ(){
+    return this.limit ? this.q.slice(0,this.limit) : this.q
+  },
   },
   methods:{
     getCategories() {
@@ -313,30 +206,54 @@ export default {
           console.log(this.products)
         });
     },
-    getHealthCategory() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/8/")
+    getAtomyBeauty() {
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/1/")
         .then((response) => {
-          console.log(response);
-          this.healthCategory = response.data;
-          console.log(this.healthCategory)
+          this.atomy = response.data.children[0].products;
+          
         });
     },
-    getWaterMachinesCategory() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/12/")
+    getEnagicBody() {
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/2/")
         .then((response) => {
-          console.log(response);
-          this.waterMachinesCategory = response.data;
-          console.log(this.waterMachinesCategory)
+          this.enagic = response.data.children[0].products;
+        
         });
     },
-    getHealthCategory2() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/15/")
+    getRainbow() {
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/4/")
         .then((response) => {
-          console.log(response);
-          this.healthCategory2 = response.data;
-          console.log(this.healthCategory2)
+          this.rainbow = response.data.children[0].products;
         });
     },
+    getSlepm() {
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/5/")
+        .then((response) => {
+          this.slepm = response.data.products;
+        });
+    },
+    getQ() {
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/50/")
+        .then((response) => {
+          this.q = response.data.children[0].products;
+        });
+    },
+    // getWaterMachinesCategory() {
+    //   this.$axios.get( "https://direshop777.herokuapp.com/api/categories/12/")
+    //     .then((response) => {
+    //       console.log(response);
+    //       this.waterMachinesCategory = response.data;
+    //       console.log(this.waterMachinesCategory)
+    //     });
+    // },
+    // getHealthCategory2() {
+    //   this.$axios.get( "https://direshop777.herokuapp.com/api/categories/15/")
+    //     .then((response) => {
+    //       console.log(response);
+    //       this.healthCategory2 = response.data;
+    //       console.log(this.healthCategory2)
+    //     });
+    // },
     viewProduct(product) {
       this.$router.push(`/products/${product}`);
     },
@@ -473,28 +390,39 @@ export default {
     background: #ED017F;
     padding: 0px 5rem;
     padding-top:1rem ;
+    
   }
   .five1{
-    text-align: center;
-    background-color: #CCFEDA;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #94004F;
     font-size: 20px;
     font-weight: 500;
-    padding: 5px 0;
+    padding: 5px 10px;
+    color: white;
+  }
+  .five12{
+    text-align: right;
+  }
+  .five12 p a{
+    color: white;
   }
   .five2{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 1rem;
   }
   .five21{
-    background: rgb(224, 242, 251);
+    background:  rgba(255, 255, 255, 0.7);
     padding: 10px;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    text-align: center;
+    border-radius: 5px;
   }
   .five21 img{
     width: 100%;
-    height: 224px;
+    height: 150px;
   }
   .five21 p,span{
     font-weight: 700;
@@ -628,29 +556,36 @@ export default {
     width: 100%;
   }
   .four{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
   .five{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-top:10px ;
   }
-  .five1{
-    text-align: center;
-    background-color: #CCFEDA;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 5px 0;
-  }
+  
   .five2{
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 1rem;
   }
+  .five1{
+    display: grid;
+    grid-template-columns: 1fr ;
+    background-color: #94004F;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+  }
+  .five12{
+    text-align: center;
+  }
   .five21{
-    background: rgb(224, 242, 251);
+    background: rgba(255, 255, 255, 0.7);
     padding: 10px;
   }
   .five21 img{
@@ -712,6 +647,13 @@ export default {
     background-color: white;
     text-align: center;
   }
+  .four2{
+    
+    padding-top: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 0px 0px 10px;
+  }
 
   
   }
@@ -726,6 +668,13 @@ export default {
   .three li{
     list-style: none;
     display: inline;
+  }
+  .four2{
+    padding-left:0.1rem;
+    padding-top: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 0px 0px 10px;
   }
   .three li img{
     margin-right: 0px;
@@ -753,7 +702,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -781,7 +730,7 @@ export default {
     margin-bottom: 12px;
   }
   .five{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-top:10px ;
   }
@@ -834,7 +783,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -862,7 +811,7 @@ export default {
     margin-bottom: 12px;
   }
   .five{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-top:10px ;
   }

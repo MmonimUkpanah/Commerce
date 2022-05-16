@@ -21,12 +21,26 @@
           <li><img src="/img/head.png" alt="logo"></li>
           <li><input type="search" name="" id=""></li>
           <li><button>Search</button></li>
-          <li><span>Hi Prince</span> </li>
+          <li v-if=" this.$auth.loggedIn"><span>Welcome back, {{this.$auth.user.first_name}}</span> </li>
           <li @click="viewCart()"> <span>Cart</span> </li>
-          <li><span><a href="/login">Login</a></span></li>
-          <li><span><a href="/signup">Sign Up</a> </span></li>
-          <li @click="$auth.logout()"> <span>Log Out</span> </li>
+          <li><span><a href="/login" v-if="!this.$auth.loggedIn">Login</a></span></li>
+          <li v-if=" !this.$auth.loggedIn"><span><a href="/signup">Sign Up</a> </span></li>
+          <li v-if="this.$auth.loggedIn" @click="$auth.logout()"> <span>Log Out</span> </li>
         </ul>
+      </div>
+      <div class="four">
+        <ul>
+          <li>All Categories</li>
+          <li><a href="/products/beauty">Beauty Products</a> </li>
+          <li><a href="/products/body">Body and Wellness Products</a></li>
+          <li><a href="/products/health">Health products</a></li>
+          <li><a href="/products/cleaningmachines">Cleaning Machines</a></li>
+          <li><a href="/products/cleaningsolutions">Cleaning Solutions</a></li>
+          <li><a href="/products/water">Water Machines</a></li>
+        </ul>
+      </div>
+      <div class="five">
+
       </div>
     </section>
 </template>
@@ -62,6 +76,9 @@ export default {
     padding: 0;
     box-sizing: border-box;
   }
+  .footer{
+    padding-bottom: 1rem;
+  }
   .one{
     background-color: rgba(80, 199, 255, 0.5);
   }
@@ -82,7 +99,7 @@ export default {
     padding-top: 3px;
     padding-bottom: 3px;
   }
-  .two ul li,a{
+  .two ul li{
     display: inline;
     list-style: none;
     color: #6A88CA;
@@ -98,7 +115,7 @@ export default {
     display: inline;
   }
   .three li img{
-    margin-right: 5rem;
+    margin-right: 3rem;
     width: 5rem;
   }
   .three li input{
@@ -119,7 +136,8 @@ export default {
     color: white;
   }
   .three li span{
-    margin-left: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     font-size: 20px;
     font-weight: 500;
     color: white;
@@ -127,9 +145,27 @@ export default {
   a{
     color: white;
     text-decoration: none;
+    
   }
   .threesmall{
     display: none;
+  }
+  .four{
+    background: #94004F;
+    color: white;
+    padding: 5px 85px;
+  }
+  .four li{
+    display: inline;
+  }
+  .four li a{
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .five{
+    background: #ED017F;
+    height: 0rem;
   }
 
 
@@ -149,7 +185,7 @@ export default {
     margin-right: 0.5rem;
   }
     .three{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 5px 10px;
   }
   .three li{
@@ -183,7 +219,22 @@ export default {
     font-size: 20px;
     font-weight: 500;
   }
-  
+  li{
+    display: block;
+    list-style: none;
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+  .four li a{
+    margin-right: 1rem;
+    margin-left: 0rem;
+    display: block;
+  }
+  .four{
+    background: #94004F;
+    color: white;
+    padding: 5px 10px;
+  }
   
 
   
@@ -193,7 +244,12 @@ export default {
 
   @media(min-width: 577px) and (max-width:768px){
     .three{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
+    padding: 5px 10px;
+  }
+  .four{
+    background: #94004F;
+    color: white;
     padding: 5px 10px;
   }
   .three li{
@@ -232,7 +288,7 @@ export default {
 
   @media(min-width: 769px) and (max-width:1200px){
     .three{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 5px 10px;
   }
   .three li{
@@ -264,7 +320,11 @@ export default {
     font-size: 20px;
     font-weight: 500;
   }
-  
+  .four{
+    background: #94004F;
+    color: white;
+    padding: 5px 10px;
+  }
     
   }
 </style>

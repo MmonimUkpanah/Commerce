@@ -27,7 +27,7 @@
             
           </div>
           <div class="sin">
-            <h3>Rainbow Rexair {{category1.name}}</h3>
+            <h3>{{category1.name}}</h3>
             <hr>
             <div class="sin4" >
               <div class="sin3" v-for="(pro, index) in category1.products " :key="index" @click="viewProduct(pro.id)">
@@ -92,12 +92,12 @@ export default {
   },
   methods:{
     getCategories() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/4/")
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/50/")
         .then((response) => {
           console.log(response);
-          this.categories = response.data;
+          this.categories = response.data.children[0].products;
           console.log(this.categories)
-          this.category1 = response.data.children[1];
+          this.category1 = response.data.children[0];
           
         });
     },

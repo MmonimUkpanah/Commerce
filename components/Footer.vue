@@ -83,6 +83,16 @@
         .one{
         margin-top: 10px;
     }
+    .one button{
+        background: #94004F;
+        border-radius: 5px;
+        padding: 5px 20px;
+        border: none;
+        color: white;
+        display: block;
+        margin-top: 1rem;
+        width: 100%;
+    }
     }
 
 

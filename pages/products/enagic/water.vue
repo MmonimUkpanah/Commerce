@@ -19,25 +19,28 @@
             <h6>RAINBOW REXAIR    +</h6>
             <a href="/products/rainbow/cleaningmachines"><p>- Cleaning Machines</p></a>
             <a href="/products/rainbow/solutions"><p>- Cleaning Solutions</p></a>
-            <h6>QUIARI    +</h6>
-            <a href="/products/quiari/energy"><p>- Quiari Energy</p></a>
-            <a href="/products/quiari/shake"><p>- Quiari Shake</p></a>
             <h6>SLEPM    +</h6>
             <a href="/products/slepm/beauty"><p>- Beauty Products</p></a>
             
           </div>
           <div class="sin">
-            <h3>Rainbow Rexair {{category1.name}}</h3>
+            <h3> {{category1.name}}</h3>
             <hr>
             <div class="sin4" >
-              <div class="sin3" v-for="(pro, index) in category1.products " :key="index" @click="viewProduct(pro.id)">
+              <div class="sin3" v-for="(pro, index) in category1.products " :key="index">
               <div class="sin1" >
               <img :src="pro.photo_main" alt="" >
-              <div class="sin11" >
+              <button>ADD TO CART</button>
+            </div>
+            <div class="sin2">
+              <div class="sin21" >
                 <p> {{pro.name}}</p>
-                <p>${{pro.price}}</p>
+              
+              
+                    <p>${{pro.price}}</p>
               </div>
-              <button>Product Details</button>
+              
+                    <button>PRODUCT DETAILS</button>
             </div>
             </div>
             </div>
@@ -92,12 +95,12 @@ export default {
   },
   methods:{
     getCategories() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/4/")
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/2/")
         .then((response) => {
           console.log(response);
           this.categories = response.data;
           console.log(this.categories)
-          this.category1 = response.data.children[1];
+          this.category1 = response.data.children[0];
           
         });
     },
@@ -177,7 +180,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: #ED017F;
+    background: rgba(80, 199, 255, 0.5);
     padding: 0px 5rem;
   }
   .three li{
@@ -198,7 +201,7 @@ export default {
     margin-right: 1rem;
   }
   .three li button{
-    background: #94004F;
+    background: #698EDE;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
@@ -212,7 +215,7 @@ export default {
     display: none;
   }
   .four{
-    background: #ED017F;
+    background: rgba(80, 199, 255, 0.5);
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -230,10 +233,10 @@ export default {
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
     border-radius: 10px 0px 0px 10px;
-    height: 90vh;
+    height: 70vh;
   }
   .four2 h6{
-    color: #94004F;
+    color: #4C67F5;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -247,16 +250,13 @@ export default {
     color: black;
   }
   .sin{
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     color: black;
     padding: 10px 10px;
   }
   .sin1 img{
-    height: 150px;
+    height: 15rem;
     width: 100%;
-  }
-  .sin11{
-      height: 4.5rem;
   }
   .sin21{
     height: 12rem;
@@ -268,25 +268,20 @@ export default {
   }
   .sin3{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
-    text-align: center;
   }
   .sin4{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
-    row-gap: 1rem;
     box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     padding: 1rem 0.5rem;
   }
-  .sin h3{
-     color:#94004F ; 
-  }
   .sin1 button{
     width: 100%;
-    background: #94004F;
+    background: #698EDE;
     border-radius: 3px;
     margin-top: 0.5rem;
     border: none;
@@ -324,7 +319,7 @@ export default {
     margin-right: 0.5rem;
   }
     .three{
-    background: #ED017F;
+    background: rgba(80, 199, 255, 0.5);
     padding: 5px 10px;
   }
   .three li{
@@ -346,7 +341,7 @@ export default {
     display: none;
   }
   .three li button{
-    background: #94004F;
+    background: #698EDE;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
@@ -359,7 +354,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: rgba(80, 199, 255, 0.5);
     padding: 0px 10px;
     padding-bottom: 1rem;
   }
@@ -398,7 +393,7 @@ export default {
 
   @media(min-width: 577px) and (max-width:768px){
     .three{
-    background: #ED017F;
+    background: rgba(80, 199, 255, 0.5);
     padding: 5px 10px;
   }
   .three li{
@@ -419,7 +414,7 @@ export default {
     margin-right: 5px;
   }
   .three li button{
-    background: #94004F;
+    background: #698EDE;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
@@ -431,7 +426,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: rgba(80, 199, 255, 0.5);
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -476,7 +471,7 @@ export default {
 
   @media(min-width: 769px) and (max-width:1200px){
     .three{
-    background: #ED017F;
+    background: rgba(80, 199, 255, 0.5);
     padding: 5px 10px;
   }
   .three li{
@@ -497,7 +492,7 @@ export default {
     margin-right: 5px;
   }
   .three li button{
-    background: #94004F;
+    background: #698EDE;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
@@ -509,7 +504,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: rgba(80, 199, 255, 0.5);
     padding: 0px 10px;
     padding-bottom: 10px;
   }

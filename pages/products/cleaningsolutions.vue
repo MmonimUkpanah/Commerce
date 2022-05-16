@@ -19,49 +19,32 @@
             <h6>RAINBOW REXAIR    +</h6>
             <a href="/products/rainbow/cleaningmachines"><p>- Cleaning Machines</p></a>
             <a href="/products/rainbow/solutions"><p>- Cleaning Solutions</p></a>
+            <h6>QUIARI    +</h6>
+            <a href="/products/quiari/energy"><p>- Quiari Energy</p></a>
+            <a href="/products/quiari/shake"><p>- Quiari Shake</p></a>
             <h6>SLEPM    +</h6>
             <a href="/products/slepm/beauty"><p>- Beauty Products</p></a>
             
           </div>
           <div class="sin">
-            <h3>Enagic {{category1.name}}</h3>
+            <h3>Rainbow Rexair Cleaning Solutions</h3>
             <hr>
             <div class="sin4" >
-              <div class="sin3" v-for="(pro, index) in category1.products " :key="index">
+              <div class="sin3" v-for="(pro, index) in kangen " :key="index" @click="viewProduct(pro.id)">
               <div class="sin1" >
               <img :src="pro.photo_main" alt="" >
-              <button>ADD TO CART</button>
-            </div>
-            <div class="sin2">
-              <div class="sin21" >
-                <p> {{pro.name}}</p>
-              <!-- <p>{{pro.description}} </p> -->
-              
-                    <p>${{pro.price}}</p>
+              <div class="sin11">
+              <p> {{pro.name}}</p>
+              <p>${{pro.price}}</p>
               </div>
-              
-                    <button>PRODUCT DETAILS</button>
+              <button>Product Details</button>
             </div>
             </div>
             </div>
             
             
           </div>
-          <!-- <div class="four3">
-            <h3>ATOMY PRODUCTS</h3>
-            <hr>
-            <div class="four31">
-                <div >
-                  <img src="/1.svg" alt="">
-                  <button>ADD TO CART</button>
-                </div>
-                <div>
-                    <p>(Black + Grey) = 7999 Men's Hiphop Cropped Trouser Pants </p>
-                    <p>4678</p>
-                    <button>PRODUCT DETAILS</button>
-                </div>
-            </div>
-          </div> -->
+          
           
         </div>
       </div>
@@ -80,62 +63,23 @@
 export default {
   data(){
     return{
-      categories:{},
-      category1:{},
-      category2:{},
-      category3:{}
+      kangen:{}
+      
     }
   },
   mounted(){
-    this.getCategories()
-    // this.getProducts(),
-    // this.getHealthCategory(),
-    // this.getWaterMachinesCategory(),
-    // this.getHealthCategory2()
+    this.getKangen()
+    
   },
   methods:{
-    getCategories() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/2/")
+    getKangen() {
+      this.$axios.get( "https://direshop777.herokuapp.com/api/categories/4/")
         .then((response) => {
-          console.log(response);
-          this.categories = response.data;
-          console.log(this.categories)
-          this.category1 = response.data.children[0];
-          
+          this.kangen = response.data.children[1].products;
+          console.log(this.kangen)
         });
     },
-    // getProducts() {
-    //   this.$axios.get( "https://direshop777.herokuapp.com/api/products/")
-    //     .then((response) => {
-    //       console.log(response);
-    //       this.products = response.data;
-    //       console.log(this.products)
-    //     });
-    // },
-    // getHealthCategory() {
-    //   this.$axios.get( "https://direshop777.herokuapp.com/api/categories/8/")
-    //     .then((response) => {
-    //       console.log(response);
-    //       this.healthCategory = response.data;
-    //       console.log(this.healthCategory)
-    //     });
-    // },
-    // getWaterMachinesCategory() {
-    //   this.$axios.get( "https://direshop777.herokuapp.com/api/categories/12/")
-    //     .then((response) => {
-    //       console.log(response);
-    //       this.waterMachinesCategory = response.data;
-    //       console.log(this.waterMachinesCategory)
-    //     });
-    // },
-    // getHealthCategory2() {
-    //   this.$axios.get( "https://direshop777.herokuapp.com/api/categories/15/")
-    //     .then((response) => {
-    //       console.log(response);
-    //       this.healthCategory2 = response.data;
-    //       console.log(this.healthCategory2)
-    //     });
-    // },
+    
     viewProduct(product) {
       this.$router.push(`/products/${product}`);
     },
@@ -180,7 +124,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 5rem;
   }
   .three li{
@@ -215,7 +159,7 @@ export default {
     display: none;
   }
   .four{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -236,7 +180,7 @@ export default {
     height: 70vh;
   }
   .four2 h6{
-    color: #4C67F5;
+    color: #94004F;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -250,13 +194,16 @@ export default {
     color: black;
   }
   .sin{
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     color: black;
     padding: 10px 10px;
   }
   .sin1 img{
-    height: 15rem;
+    height: 150px;
     width: 100%;
+  }
+  .sin11{
+      height: 4.5rem;
   }
   .sin21{
     height: 12rem;
@@ -266,22 +213,29 @@ export default {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
+  .sin h3{
+     color:#94004F ; 
+  }
   .sin3{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 1rem;
+    text-align: center;
   }
   .sin4{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    column-gap: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    row-gap: 1rem;
     box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     padding: 1rem 0.5rem;
+    
   }
   .sin1 button{
     width: 100%;
-    background: #698EDE;
+    background:  #94004F;;
     border-radius: 3px;
     margin-top: 0.5rem;
     border: none;
@@ -354,7 +308,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-bottom: 1rem;
   }
@@ -426,7 +380,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -460,7 +414,7 @@ export default {
   } */
   .sin4{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
     row-gap: 1rem;
     box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -504,7 +458,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: rgba(80, 199, 255, 0.5);
+    background: #ED017F;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
