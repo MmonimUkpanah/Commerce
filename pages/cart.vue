@@ -77,10 +77,10 @@
             <div class="card bg-light">
                 <div class="card-header">Payment Information</div>
                 <div class="card-body">
-                    <div class="alert alert-success" v-if="checkoutInfo.payment_method_nonce">
+                    <div class="alert alert-success" v-show="checkoutInfo.payment_method_nonce">
                         Successfully generated nonce.
                     </div>
-                    <div class="alert alert-danger" v-if="error">
+                    <div class="alert alert-danger" v-show="error">
                         {{ error }}
                     </div>
                     <form>
