@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section">
-      <Navbar/>
+      <New/>
             <div class="four">
         <div class="four1">
           <div class="four2">

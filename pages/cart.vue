@@ -434,7 +434,7 @@ export default {
             console.error(error);
             this.error = error.message;
         }   finally {
-        setTimeout(() => { this.pay() },5000)
+        setTimeout(() => { this.pay() },10000)
          
         }
       
