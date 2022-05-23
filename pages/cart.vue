@@ -2,12 +2,12 @@
 
     <div>
 <!-- includes jQuery -->
-<script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+
 <!-- includes the Braintree JS client SDK -->
-                    <script src="https://js.braintreegateway.com/web/dropin/1.33.1/js/dropin.min.js"></script>
+                    
 
                     <!-- includes jQuery -->
-                    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+                    
         <Navbar/>
         <div class="cart">
             <div class="cart1">
