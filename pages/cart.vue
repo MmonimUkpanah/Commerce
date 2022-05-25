@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="cart21">
-                    <p>Total</p> <p class="cart23">${{amount}}</p>
+                    <p>Total</p> <p class="cart23">$ {{amount}}</p>
                 </div>
                 
                 <div>
@@ -253,9 +253,9 @@ export default {
     mounted(){
         this.getCart(),
         this.getOrderSummary(),
-        this.getTreeConfig(),
+        // this.getTreeConfig(),
         this.getCountries(),
-        this.getClientToken()
+        // this.getClientToken()
         this.$Braintree.client.create({
             authorization: "sandbox_s96mdk2n_x8k6mngqj2qz555h"
         })
@@ -341,7 +341,7 @@ export default {
     },
     methods:{
         getCart() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/carts/")
+      this.$axios.get("https://direshop777.herokuapp.com/api/get-carts/")
         .then((response) => {
           
           this.items = response.data;
@@ -359,38 +359,37 @@ export default {
         .then((response) => {
          
           this.summary = response.data;
-          console.log(this.summary);
-          this.checkoutInfo.id = response.data[0].id;
-          this.checkoutInfo.products = response.data[0].products;
-          this.checkoutInfo.user = response.data[0].user;
-          this.checkoutInfo.date = response.data[0].date;
-          this.checkoutInfo.country = response.data[0].country;
-          this.checkoutInfo.paid = response.data[0].paid;
+          this.checkoutInfo.id = response.data.serializer[0].id
+          this.checkoutInfo.products = response.data.serializer[0].products;
+          this.checkoutInfo.user = response.data.serializer[0].user;
+          this.checkoutInfo.date = response.data.serializer[0].date;
+          this.checkoutInfo.country = response.data.serializer[0].country;
+          this.checkoutInfo.paid = response.data.serializer[0].paid;
           this.user = this.$auth.user,
-          this.amount = response.data[0].total.toString();
+          this.amount = response.data.total,
           this.checkoutInfo.first_name = this.user.first_name;
           this.checkoutInfo.last_name = this.user.surname;
-          console.log(this.amount)
+          console.log(this.checkoutInfo.id )
         });
     },
-    getTreeConfig() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/braintree-config/")
-        .then((response) => {
+    // getTreeConfig() {
+    //   this.$axios.get( "https://direshop777.herokuapp.com/api/braintree-config/")
+    //     .then((response) => {
           
-          this.config = response.data;
-          console.log(this.config);
+    //       this.config = response.data;
+    //       console.log(this.config);
           
-        });
-    },
-    getClientToken() {
-      this.$axios.get( "https://direshop777.herokuapp.com/api/braintree-client/")
-        .then((response) => {
+    //     });
+    // },
+    // getClientToken() {
+    //   this.$axios.get( "https://direshop777.herokuapp.com/api/braintree-client/")
+    //     .then((response) => {
           
-          this.client_token = response.data.token;
-          console.log(this.client_token);
+    //       this.client_token = response.data.token;
+    //       console.log(this.client_token);
           
-        });
-    },
+    //     });
+    // },
     getCountries() {
       this.$axios.get( "https://direshop777.herokuapp.com/api/countries/")
         .then((response) => {

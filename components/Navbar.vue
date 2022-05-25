@@ -1,49 +1,69 @@
 <template>
     <section>
       <div class="dash">
-        <nav class="navbar navbar-expand-lg bg-light">
+        <div class="dash1">
+          <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="/"><img src="/img/head.png" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-"><img src="/img/menu.png" alt=""></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <input type="search" name="" id="">
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <button class="search">Search</button>
         </li>
+        <li class="nav-item" v-if="this.$auth.loggedIn">
+          <span>Welcome back, {{this.$auth.user.first_name}}</span>
+        </li>
+        <li class="nav-item" @click="viewCart()">
+          <button class="search">Cart <div class="cart"  v-if="this.$auth.loggedIn">{{length}}</div> </button>
+        </li>
+        <li class="nav-item">
+          <span><a href="/login" v-if="!this.$auth.loggedIn">Login</a></span>
+        </li>
+        <li class="nav-item" v-if="!this.$auth.loggedIn">
+          <span><a href="/signup">Sign Up</a> </span>
+        </li>
+        <li class="nav-item" v-if="this.$auth.loggedIn" @click="$auth.logout()">
+          <span>Logout</span>
+        </li>
+        
+        <li class="nav-item s">
+          <span><a href="/products/beauty">Beauty Products</a></span>
+        </li>
+        <li class="nav-item s">
+          <span><a href="/products/body">Body and Wellness Products</a></span>
+        </li>
+        <li class="nav-item s">
+          <span><a href="/products/health">Health products</a></span>
+        </li>
+        <li class="nav-item s">
+          <span><a href="/products/health">Health products</a></span>
+        </li>
+         <li class="nav-item s">
+          <span><a href="/products/cleaningmachines">Cleaning Machines</a></span>
+        </li>
+         <li class="nav-item s">
+          <span><a href="/products/cleaningsolutions">Cleaning Solutions</a></span>
+        </li>
+         <li class="nav-item s">
+          <span><a href="/products/water">Water Machines</a></span>
+        </li>
+        
+          
+      
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
+        </div>
+        
       </div>
-        <div class="one">
-        <!-- <div class="one1">
-          <p>Reach Us on Whatsapp</p> 
-          <p>+17045606540</p>
-        </div> -->
-      </div>
+        
       <!-- <div class="two">
         <ul>
           <li>About Us</li>
@@ -54,21 +74,10 @@
           <li><a href="/signup">Sign Up</a> </li>
         </ul>
       </div> -->
-      <div class="three">
+     
+      <div class="four b">
         <ul>
-          <li><img src="/img/head.png" alt="logo"></li>
-          <li><input type="search" name="" id=""></li>
-          <li><button>Search</button></li>
-          <li v-if=" this.$auth.loggedIn"><span>Welcome back, {{this.$auth.user.first_name}}</span> </li>
-          <li @click="viewCart()"> <span>Cart</span> </li>
-          <li><span><a href="/login" v-if="!this.$auth.loggedIn">Login</a></span></li>
-          <li v-if=" !this.$auth.loggedIn"><span><a href="/signup">Sign Up</a> </span></li>
-          <li v-if="this.$auth.loggedIn" @click="$auth.logout()"> <span>Log Out</span> </li>
-        </ul>
-      </div>
-      <div class="four">
-        <ul>
-          <li>All Categories</li>
+          <li>All Categories >></li>
           <li><a href="/products/beauty">Beauty Products</a> </li>
           <li><a href="/products/body">Body and Wellness Products</a></li>
           <li><a href="/products/health">Health products</a></li>
@@ -86,6 +95,15 @@
 
 <script>
 export default {
+  data(){
+    return{
+      items:[],
+      length:null
+    }
+  },
+  mounted(){
+    this.getCart()
+  },
   methods:{
     viewCart(){
       if (this.$auth.loggedIn == true){
@@ -101,7 +119,16 @@ export default {
       } catch (err) {
         console.log(err)
       }
-    }
+    },
+        getCart() {
+      this.$axios.get("https://direshop777.herokuapp.com/api/get-carts/")
+        .then((response) => {
+          
+          this.items = response.data;
+          this.length = this.items.length
+          console.log(this.items.length)
+        });
+    },
   }
 }
 </script>
@@ -156,7 +183,13 @@ export default {
     margin-right: 3rem;
     width: 5rem;
   }
-  .three li input{
+  .navbar-brand img{
+    width: 5rem;
+  }
+  .navbar-nav{
+    gap: 2rem;
+  }
+  .navbar-nav li input{
     background: #FFFFFF;
     border: 1px solid rgba(196, 196, 196, 0.8);
     box-sizing: border-box;
@@ -166,16 +199,14 @@ export default {
     padding: 4px 5px;
     margin-right: 1rem;
   }
-  .three li button{
+  .navbar-nav li button{
     background: #FBA100;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
     color: white;
   }
-  .three li span{
-    margin-left: 1rem;
-    margin-right: 1rem;
+  .navbar-nav li span{
     font-size: 20px;
     font-weight: 500;
     color: white;
@@ -207,15 +238,89 @@ export default {
   }
 
 .dash{
-  padding-left: 5rem;
-  padding-right: 5rem;
+  background: #ED017F !important;
+}
+.navbar-toggler{
+  background: white;
+}
+.navbar-toggler:focus{
+  outline: none !important;
 }
 
-  @media(max-width:576px){
-    .dash{
-  padding-left: 10px;
-  padding-right: 10px;
+ .navbar-toggler {
+  border: none;
+  border: 5px solid white;
 }
+.navbar-toggler:focus {
+  box-shadow: none;
+  
+}
+.s{
+  display: none;
+}
+.b{
+  display: block;
+}
+/* .navbar-toggler-icon{
+  color: white !important;
+  background: white !important;
+  border: black;
+} */
+.dash1{
+  padding: 0 5rem;
+}
+.cart{
+    background: green;
+    display: inline;
+    color: white;
+    border-radius: 5px;
+    height: 1rem;
+    width: 1rem;
+    padding: 0.3rem;
+    margin-left: 1rem;
+  }
+
+
+  @media(max-width:576px){
+      .navbar-nav li input{
+    background: #FFFFFF;
+    border: 1px solid rgba(196, 196, 196, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 100%;
+    padding: 4px 5px;
+    margin-right: 1rem;
+  }
+  .navbar-nav li button{
+    background: #FBA100;
+    border-radius: 10px;
+    padding: 5.5px 20px;
+    width: 100%;
+    border: none;
+    color: white;
+  }
+  
+ .dash1{
+   padding:  0 10px;
+   overflow-x: hidden;
+ }
+.s{
+  display: block;
+}
+
+.b{
+  display: none;
+}
+.navbar-nav{
+    gap: 1rem;
+  
+  }
+
+/* .navbar{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+} */
     .one1{
     background-color: rgb(255, 148, 0);
     width: 100%;
@@ -233,43 +338,9 @@ export default {
     background: #ED017F;
     padding: 5px 10px;
   }
-  .three li{
-    list-style: none;
-    display: inline;
-  }
-  .three li img{
-    margin-right: 0px;
-  }
-  .three li input{
-    background: #FFFFFF;
-    border: 1px solid rgba(196, 196, 196, 0.8);
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    width: 65%;
-    padding: 4px 5px;
-    margin-right: 5px;
-    display: none;
-  }
-  .three li button{
-    background: #698EDE;
-    border-radius: 10px;
-    padding: 5.5px 20px;
-    border: none;
-    display: none;
-    /* width: 20%; */
-  }
-  .three li span{
-    margin-left: 5px;
-    font-size: 20px;
-    font-weight: 500;
-  }
-  li{
-    display: block;
-    list-style: none;
-    margin-right: 0rem;
-    margin-left: 0rem;
-  }
+
+  
+
   .four li a{
     margin-right: 1rem;
     margin-left: 0rem;
@@ -280,7 +351,7 @@ export default {
     color: white;
     padding: 5px 10px;
   }
-  
+ 
 
   
   }
@@ -292,6 +363,13 @@ export default {
     background: #ED017F;
     padding: 5px 10px;
   }
+  .navbar-nav{
+    gap: 1rem;
+  }
+  .dash1{
+   padding:  0 10px;
+   overflow-x: hidden;
+ }
   .four{
     background: #94004F;
     color: white;
@@ -336,6 +414,13 @@ export default {
     background: #ED017F;
     padding: 5px 10px;
   }
+  .navbar-nav{
+    gap: 2rem;
+  }
+   .dash1{
+   padding:  0 10px;
+   overflow-x: hidden;
+ }
   .three li{
     list-style: none;
     display: inline;
@@ -353,13 +438,7 @@ export default {
     padding: 4px 5px;
     margin-right: 5px;
   }
-  .three li button{
-    background: #698EDE;
-    border-radius: 10px;
-    padding: 5.5px 20px;
-    border: none;
-    /* width: 20%; */
-  }
+  
   .three li span{
     margin-left: 1rem;
     font-size: 20px;
