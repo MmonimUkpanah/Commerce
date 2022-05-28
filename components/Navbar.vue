@@ -22,14 +22,12 @@
         <li class="nav-item" @click="viewCart()">
           <button class="search">Cart <div class="cart"  v-if="this.$auth.loggedIn">{{length}}</div> </button>
         </li>
-        <li class="nav-item">
-          <span><a href="/login" v-if="!this.$auth.loggedIn">Login</a></span>
-        </li>
         <li class="nav-item" v-if="!this.$auth.loggedIn">
-          <span><a href="/signup">Sign Up</a> </span>
+          <span><a href="/login" >Login/Sign Up</a></span>
         </li>
+        
         <li class="nav-item" v-if="this.$auth.loggedIn" @click="$auth.logout()">
-          <span>Logout</span>
+          <span>Log out</span>
         </li>
         
         <li class="nav-item s">

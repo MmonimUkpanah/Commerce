@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div >
 <!-- includes jQuery -->
 
 <!-- includes the Braintree JS client SDK -->
@@ -9,7 +9,8 @@
                     <!-- includes jQuery -->
                     
         <Navbar/>
-        <div class="cart">
+        <div class="over">
+             <div class="cart">
             <div class="cart1">
                 <h2>Cart</h2>
                 <hr>
@@ -22,11 +23,14 @@
                         <h5>{{item.product.name}}</h5>
                         <p>{{item.product.description}}</p>
                         <p>Quantity: {{item.quantity}}</p>
+                        <p class="delete mt-3" @click="deleteItem(item.id)"><img src="/img/delete.png" alt=""> Remove from cart</p>
                     </div>
                     <div>
                         <p>${{item.total_product_price}}</p>
                     </div>
+                    
                 </div>
+                
             </div>
             <div class="cart2">
                 <h2>Cart Summary</h2>
@@ -43,15 +47,15 @@
                     <p>Total</p> <p class="cart23">$ {{amount}}</p>
                 </div>
                 
-                <div>
-                    <b-button v-b-modal.modal-1>Checkout Information</b-button>
+                <div >
+                    <b-button v-b-modal.modal-1 class="but">Checkout Information</b-button>
 
-                    <b-modal id="modal-1" title="Checkout"  @ok="checkOut()">
-                        <form method="post">
+                    <b-modal id="modal-1" :hide-footer="true" >
+                        <form method="post" class="cart24" @submit.prevent="checkOut()">
                             <label for="Shipping Address">Shipping Address</label>
-                            <input type="text" v-model="checkoutInfo.address" required>
+                            <input type="text" class="form-control" v-model="checkoutInfo.address" required>
                             <label for="Gender">Gender</label>
-                            <select class="form-select" v-model="checkoutInfo.gender" aria-label="Default select example" required>
+                            <select class="form-select form-control"  v-model="checkoutInfo.gender" aria-label="Default select example" required>
                                 <option selected disabled>Open this select menu</option>
                                 <option value='M'>Male</option>
                                 <option value='F'>Female</option>
@@ -65,8 +69,8 @@
                                 
                             </select> -->
                             <label for="Zip Code">Zip Code</label>
-                            <input type="text" v-model="checkoutInfo.zip" required>
-                            
+                            <input type="text" class="form-control" v-model="checkoutInfo.zip" required>
+                            <button type="submit" class="form-control but mt-3">Submit</button>
                         </form>
                     </b-modal>
                 </div>
@@ -121,6 +125,8 @@
 
                 </div>
         </div>
+        </div>
+       
        
         
         <Footer/>
@@ -132,28 +138,49 @@
     margin-left: 5rem;
     margin-right: 5rem;
     display: grid;
+    
     grid-template-columns: 3fr 1fr;
     column-gap: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    
+}
+.over{
+    background: #E5E5E5;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    color: #ED017F;
+}
+.but{
+    background: #ED017F;
+    color: white;
+    width: 100%;
+    border: none;
+}
+.cart24{
+    color: #ED017F !important;
 }
 .cart1{
     padding: 1rem 1rem;
-    border: 1px solid green;
     border-radius: 5px;
+    background: white;
+    box-shadow: 5px 5px 8px #888888;
 }
 .cart11{
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     column-gap: 1.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 0.5px solid #E5E5E5;
 }
+
 .cart12 img{
     width: 100%;
     height: 10rem;
 }
 .cart2{
     padding: 1rem;
-    border: 1px solid green;
+    background: white;
+    box-shadow: 5px 5px 8px #888888;
     border-radius: 5px;
 }
 .cart21{
@@ -436,6 +463,39 @@ export default {
         setTimeout(() => { this.pay() },10000)
          
         }
+      
+    },
+    async deleteItem(item) {
+        try {
+            this.$swal({
+  title: "Are you sure?",
+  text: "Are you sure you want to remove this item from your cart?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+       this.$axios.delete(`https://direshop777.herokuapp.com/api/carts/${item}`)
+        .then((response) => {
+          console.log(response);
+          this.getCart()
+        });
+    // swal("Poof! Your imaginary file has been deleted!", {
+    //   icon: "success",
+    // });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
+});
+        } catch (error) {
+            console.log(error);
+            
+        }   
+        // finally {
+        // setTimeout(() => { this.pay() },10000)
+         
+        // }
       
     },
     

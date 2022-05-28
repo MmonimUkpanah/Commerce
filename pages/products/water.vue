@@ -4,7 +4,7 @@
       <Navbar/>
             <div class="four">
         <div class="four1">
-          <div class="four2">
+          <div class="four2 s">
             <h6>ATOMY    +</h6>
             <a href="/products/atomy/beauty"><p>- Beauty Products </p></a>
             <a href="/products/atomy/body"><p>- Body and Wellness</p></a>
@@ -264,6 +264,9 @@ export default {
     width: 100%;
     margin-left: auto;
     text-align: center;
+  }
+  .s{
+    display: none;
   }
     .two ul li{
     display: inline;

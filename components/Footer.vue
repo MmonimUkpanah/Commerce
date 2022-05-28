@@ -5,21 +5,25 @@
                 <img src="/img/head.png" alt="logo">
                 <button>Start Live Chat</button>
             </div>
-            <div class="two">
+            
+            <div class="sec">
+               <div class="two">
                 <p class="title">Company</p>
                 <p>About</p>
                 <p>Features</p>
                 <p>Works</p>
                 <p>Career</p>
-            </div>
-            <div class="three">
+               </div> 
+               <div class="three">
                 <p class="title">Help</p>
                 <p>Customer Support</p>
                 <p>Delivery Details</p>
                 <p>Terms and Conditions</p>
                 <p>Privacy Policy</p>
+               </div>
             </div>
-            <div class="four">
+            <div class="sec1">
+                <div class="four">
                 <p class="title">Resources</p>
                 <p>Free Ebooks</p>
                 <p>Development Tutorial</p>
@@ -33,6 +37,9 @@
                 <p>Terms and Conditions</p>
                 <p>Privacy Policy</p>
             </div>
+            </div>
+            
+            
         </section>
         
     </footer>
@@ -47,12 +54,17 @@
     }
     .finito{
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         column-gap: 1rem;
     }
+    .sec, .sec1{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     
     .title{
-        font-weight: 500;
+        font-weight: 700;
     }
     
     .one img{
@@ -74,14 +86,21 @@
         .finito{
         display: grid;
         grid-template-columns:1fr;
-        column-gap: 1rem;
+        row-gap: 1rem;
+
+    }
+    
+    .sec, .sec1{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
         footer{
         padding: 2rem 10px;
-        text-align: center;
+        text-align: left;
     }
         .one{
         margin-top: 10px;
+        text-align: center;
     }
     .one button{
         background: #94004F;
