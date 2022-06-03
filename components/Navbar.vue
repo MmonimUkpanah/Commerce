@@ -4,7 +4,7 @@
         <div class="dash1">
           <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="/img/head.png" alt="logo"></a>
+    <a class="navbar-brand" href="/"><img src="/img/lo.png" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-"><img src="/img/menu.png" alt=""></span>
     </button>
@@ -170,7 +170,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 5rem;
   }
   .three li{
@@ -218,7 +218,7 @@ export default {
     display: none;
   }
   .four{
-    background: #94004F;
+    background: #15213B;
     color: white;
     padding: 5px 85px;
   }
@@ -231,12 +231,12 @@ export default {
   }
 
   .five{
-    background: #ED017F;
+    background: #15213B;
     height: 0rem;
   }
 
 .dash{
-  background: #ED017F !important;
+  background: #15213B !important;
 }
 .navbar-toggler{
   background: white;
@@ -268,12 +268,12 @@ export default {
   padding: 0 5rem;
 }
 .cart{
-    background: green;
+    background: #29A67A;
     display: inline;
     color: white;
-    border-radius: 5px;
-    height: 1rem;
-    width: 1rem;
+    border-radius: 50%;
+    height: 0.5rem;
+    width: 0.5rem;
     padding: 0.3rem;
     margin-left: 1rem;
   }
@@ -333,7 +333,7 @@ export default {
     margin-right: 0.5rem;
   }
     .three{
-    background: #ED017F;
+    background: #15213B;
     padding: 5px 10px;
   }
 
@@ -345,7 +345,7 @@ export default {
     display: block;
   }
   .four{
-    background: #94004F;
+    background: #29A67A;
     color: white;
     padding: 5px 10px;
   }
@@ -358,7 +358,7 @@ export default {
 
   @media(min-width: 577px) and (max-width:768px){
     .three{
-    background: #ED017F;
+    background: #15213B;
     padding: 5px 10px;
   }
   .navbar-nav{
@@ -369,7 +369,7 @@ export default {
    overflow-x: hidden;
  }
   .four{
-    background: #94004F;
+    background: #29A67A;
     color: white;
     padding: 5px 10px;
   }
@@ -443,7 +443,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #94004F;
+    background: #29A67A;
     color: white;
     padding: 5px 10px;
   }

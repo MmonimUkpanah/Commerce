@@ -334,7 +334,7 @@ export default {
     display: none;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -354,7 +354,7 @@ export default {
     border-radius: 10px 0px 0px 10px;
   }
   .four2 h6{
-    color:  #94004F;
+    color:  #15213B;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -387,7 +387,7 @@ export default {
     
   }
   .five{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 5rem;
     padding-top:1rem ;
     
@@ -395,7 +395,7 @@ export default {
   .five1{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #94004F;
+    background-color: #29A67A;
     font-size: 20px;
     font-weight: 500;
     padding: 5px 10px;
@@ -419,6 +419,7 @@ export default {
     margin-top: 1rem;
     text-align: center;
     border-radius: 5px;
+    color: #15213B;
   }
   .five21 img{
     width: 100%;
@@ -559,7 +560,7 @@ export default {
     width: 100%;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -668,6 +669,11 @@ export default {
     background: rgba(80, 199, 255, 0.5);
     padding: 5px 10px;
   }
+  .four1{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 1rem;
+  }
   .three li{
     list-style: none;
     display: inline;
@@ -705,7 +711,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -786,7 +792,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }

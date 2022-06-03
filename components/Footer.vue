@@ -2,7 +2,7 @@
     <footer>
         <section class="finito">
             <div class="one">
-                <img src="/img/head.png" alt="logo">
+                <img src="/img/lo.png" alt="logo">
                 <button>Start Live Chat</button>
             </div>
             
@@ -50,7 +50,11 @@
     footer{
         padding: 2rem 5rem;
         background: #000000;
-        color: white;
+        color: #F2F2F2;
+    }
+    footer p:hover{
+        
+        color: #2B59FF;
     }
     .finito{
         display: grid;
@@ -71,7 +75,7 @@
         width: 5rem;
     }
     .one button{
-        background: #94004F;
+        background: #29A67A;
         border-radius: 5px;
         padding: 5px 20px;
         border: none;
@@ -103,7 +107,7 @@
         text-align: center;
     }
     .one button{
-        background: #94004F;
+        background: #29A67A;
         border-radius: 5px;
         padding: 5px 20px;
         border: none;

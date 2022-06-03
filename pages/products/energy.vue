@@ -200,7 +200,7 @@ export default {
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
     border-radius: 10px 0px 0px 10px;
-    height: 70vh;
+    height: auto;
   }
   .four2 h6{
     color: #94004F;
