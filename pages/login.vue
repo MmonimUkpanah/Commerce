@@ -11,7 +11,7 @@
                             <div @click="showLogin()" ref="one1" class="l" :class="{ active: login }">
                                 <h2>Login</h2>
                             </div>
-                            <div @click="showSignup()" ref="one2" class="s" :class="{ active: signup }">
+                            <div @click="showSignup()" ref="one2" class="s" :class="{ active: sig }">
                                 <h2>Sign Up</h2>
                             </div>
                              
@@ -33,13 +33,13 @@
                             </div>
                            <button type="submit" class="form-control">Login</button>
                         </form>
-                        <form method="post" @submit.prevent="signUp" v-show="signup">
+                        <form method="post" @submit.prevent="signUp" v-show="sig">
                             <div class="form">
-                                 <input type="text" class="form-control" placeholder="First Name" v-model="signupinfo.first_name">
-                                <input type="text" class="form-control" placeholder="Last Name" v-model="signupinfo.surname">
-                                <input type="email" class="form-control" placeholder="Email" v-model="signupinfo.email">
-                                <input type="password" class="form-control" placeholder="Password" v-model="signupinfo.password">
-                                <input type="text" class="form-control" placeholder="Confirm Password" v-model="signupinfo.password2">
+                                 <input type="text" class="form-control" placeholder="First Name" v-model="sign.first_name">
+                                <input type="text" class="form-control" placeholder="Last Name" v-model="sign.surname">
+                                <input type="email" class="form-control" placeholder="Email" v-model="sign.email">
+                                <input type="password" class="form-control" placeholder="Password" v-model="sign.password">
+                                <input type="text" class="form-control" placeholder="Confirm Password" v-model="sign.password2">
                                 <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
@@ -62,24 +62,25 @@
 
 
 <script>
-import signupVue from './signup.vue';
+
 export default {
   data() {
     return {
-      loginInfo: {
-        email: '',
-        password: ''
-      },
-      login:true,
-      signup:false,
-      baseUrl: "https://direshop777.herokuapp.com/",
-      signupinfo:{
+        sign:{
           email:'',
           first_name:'',
           surname:'',
           password:'',
           password2:''
-      }
+      },
+      loginInfo: {
+        email: '',
+        password: ''
+      },
+      login:true,
+      sig:false,
+      baseUrl: "https://direshop777.herokuapp.com/",
+      
     }
   },
   mounted(){
@@ -114,7 +115,7 @@ export default {
       try {
         const response = await this.$axios.post(
           this.baseUrl + "accounts/register/",
-          this.signupinfo
+          this.sign
         );
         // this.$message({
         //   message: "Success",
@@ -129,23 +130,23 @@ export default {
         //   type: "warning",
         // });
       } finally {
-        this.signupinfo = {};
+        this.sign = {};
       }
     },
     showLogin(){
         if (this.login == false){
             this.login = true;
-            this.signup = false;
+            this.sig = false;
         }else{
             this.login = true;
         }
     },
     showSignup(){
-        if (this.signup == false){
+        if (this.sig == false){
             this.login = false;
-            this.signup = true;
+            this.sig = true;
         }else{
-            this.signup = true;
+            this.sig = true;
         }
     },
   }
