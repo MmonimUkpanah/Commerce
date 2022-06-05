@@ -565,7 +565,7 @@ export default {
     padding-bottom: 10px;
   }
   .five{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-top:10px ;
   }
@@ -578,7 +578,7 @@ export default {
   .five1{
     display: grid;
     grid-template-columns: 1fr ;
-    background-color: #94004F;
+    background-color: #29A67A;
     font-size: 20px;
     font-weight: 500;
     padding: 5px 10px;
@@ -739,7 +739,7 @@ export default {
     margin-bottom: 12px;
   }
   .five{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-top:10px ;
   }
@@ -820,7 +820,7 @@ export default {
     margin-bottom: 12px;
   }
   .five{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-top:10px ;
   }

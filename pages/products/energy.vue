@@ -182,7 +182,7 @@ export default {
     display: none;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -203,7 +203,7 @@ export default {
     height: auto;
   }
   .four2 h6{
-    color: #94004F;
+    color: #15213B;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -334,7 +334,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 1rem;
   }
@@ -406,7 +406,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -484,7 +484,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }

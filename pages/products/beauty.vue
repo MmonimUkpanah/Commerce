@@ -157,7 +157,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 5rem;
   }
   .three li{
@@ -192,7 +192,7 @@ export default {
     display: none;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -213,7 +213,7 @@ export default {
     height: auto;
   }
   .four2 h6{
-    color: #94004F;
+    color: #15213B;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -247,7 +247,7 @@ export default {
     margin-bottom: 0.5rem;
   }
   .sin h3{
-     color:#94004F ; 
+     color:#15213B ; 
   }
   .sin3{
     display: grid;
@@ -268,7 +268,7 @@ export default {
   }
   .sin1 button{
     width: 100%;
-    background:  #94004F;;
+    background:  #15213B;
     border-radius: 3px;
     margin-top: 0.5rem;
     border: none;
@@ -344,7 +344,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 1rem;
   }
@@ -416,7 +416,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -494,7 +494,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
