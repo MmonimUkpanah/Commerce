@@ -42,6 +42,7 @@
                     <div class="cart23">
                         <p>${{item.total_product_price}}</p>
                     </div>
+                    
                 </div>
                 <div class="cart21">
                     <p>Total</p> <p class="cart23">$ {{amount}}</p>
@@ -143,20 +144,26 @@
     column-gap: 2rem;
     
 }
+.delete{
+    cursor: pointer;
+}
+.delete img{
+    width: 1.5rem;
+}
 .over{
     background: #E5E5E5;
     padding-top: 10vh;
     padding-bottom: 10vh;
-    color: #ED017F;
+    color: #15213B;
 }
 .but{
-    background: #ED017F;
+    background: #15213B;
     color: white;
     width: 100%;
     border: none;
 }
 .cart24{
-    color: #ED017F !important;
+    color: #15213B !important;
 }
 .cart1{
     padding: 1rem 1rem;
@@ -216,8 +223,9 @@ form input, select{
 }
 .cart1{
     padding: 1rem 10px;
-    border: 1px solid green;
-    border-radius: 5px;
+   border-radius: 5px;
+    background: white;
+    box-shadow: 5px 5px 8px #888888;
     text-align: center;
 }
 .cart11{
@@ -228,8 +236,9 @@ form input, select{
 }
 .cart2{
     padding: 1rem 10px;
-    border: 1px solid green;
     border-radius: 5px;
+    background: white;
+    box-shadow: 5px 5px 8px #888888;
     
 }
 }
