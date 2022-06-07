@@ -19,14 +19,15 @@
           <button class="search">Search</button>
         </li>
         <li class="nav-item" v-if="this.$auth.loggedIn">
-          <span v-show="this.$auth.loggedIn">Welcome back, {{this.$auth.user.first_name}}</span>
+          <span >Welcome back, {{this.$auth.user.first_name}}</span>
         </li>
-        <li class="nav-item" @click="viewCart()">
-          <button class="search">Cart <div class="cart"  v-show="this.$auth.loggedIn">{{length}}</div> </button>
-        </li>
-        <li class="nav-item" v-if="!this.$auth.loggedIn">
+        <li class="nav-item" v-else>
           <span><a href="/login" >Login/Sign Up</a></span>
         </li>
+        <li class="nav-item" @click="viewCart()"  >
+          <button class="search">Cart <div class="cart" v-if="this.$auth.loggedIn" >{{length}}</div> </button>
+        </li>
+        
         
         <li class="nav-item" v-if="this.$auth.loggedIn" @click="$auth.logout()">
           <span>Log out</span>
