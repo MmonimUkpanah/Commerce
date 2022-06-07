@@ -3,7 +3,7 @@
         <section class="finito">
             <div class="one">
                 <img src="/img/lo.png" alt="logo">
-                <button>Start Live Chat</button>
+                <button type="button">Start Live Chat</button>
             </div>
             
             <div class="sec">

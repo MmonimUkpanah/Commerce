@@ -237,7 +237,7 @@ export default {
     margin-bottom: 0.5rem;
   }
   .sin h3{
-     color:#94004F ; 
+     color:#15213B ; 
   }
   .sin3{
     display: grid;
@@ -258,7 +258,7 @@ export default {
   }
   .sin1 button{
     width: 100%;
-    background:  #94004F;
+    background:  #15213B;
     border-radius: 3px;
     margin-top: 0.5rem;
     border: none;
