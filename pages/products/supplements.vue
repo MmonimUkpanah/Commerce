@@ -9,13 +9,9 @@
             <a href="/products/atomy/beauty"><p>- Beauty Products </p></a>
             <a href="/products/atomy/body"><p>- Body and Wellness</p></a>
             <a href="/products/atomy/health"><p>- Health Product</p></a>
-            <h6>ENAGIC    +</h6>
-            <a href="/products/enagic/beauty"><p>- Beauty</p></a>
-            <a href="/products/enagic/body"><p>- Body Wellness</p></a>
-            <a href="/products/enagic/health"><p>- Health</p></a>
-            <h6>KANGEN    +</h6>
-            <a href="/products/kangen/water"><p>- Water Machines</p></a>
-            <a href="/products/kangen/water"><p>- Health products</p></a>
+            <h6>ENAGIC KANGEN   +</h6>
+            <a href="/products/enagic/water"><p>- Water Machines</p></a>
+            <a href="/products/enagic/health"><p>- Supplements</p></a>
             <h6>RAINBOW REXAIR    +</h6>
             <a href="/products/rainbow/cleaningmachines"><p>- Cleaning Machines</p></a>
             <a href="/products/rainbow/solutions"><p>- Cleaning Solutions</p></a>
@@ -24,7 +20,6 @@
             <a href="/products/quiari/shake"><p>- Quiari Shake</p></a>
             <h6>SLEPM    +</h6>
             <a href="/products/slepm/beauty"><p>- Beauty Products</p></a>
-            
           </div>
           <div class="sin">
             <h3>Enagic Kangen Supplements</h3>

@@ -9,13 +9,9 @@
             <a href="/products/atomy/beauty"><p>- Beauty Products </p></a>
             <a href="/products/atomy/body"><p>- Body and Wellness</p></a>
             <a href="/products/atomy/health"><p>- Health Product</p></a>
-            <h6>ENAGIC    +</h6>
-            <a href="/products/enagic/beauty"><p>- Beauty</p></a>
-            <a href="/products/enagic/body"><p>- Body Wellness</p></a>
-            <a href="/products/enagic/health"><p>- Health</p></a>
-            <h6>KANGEN    +</h6>
-            <a href="/products/kangen/water"><p>- Water Machines</p></a>
-            <a href="/products/kangen/water"><p>- Health products</p></a>
+            <h6>ENAGIC KANGEN   +</h6>
+            <a href="/products/enagic/water"><p>- Water Machines</p></a>
+            <a href="/products/enagic/health"><p>- Supplements</p></a>
             <h6>RAINBOW REXAIR    +</h6>
             <a href="/products/rainbow/cleaningmachines"><p>- Cleaning Machines</p></a>
             <a href="/products/rainbow/solutions"><p>- Cleaning Solutions</p></a>
@@ -177,7 +173,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 5rem;
   }
   .three li{
@@ -212,7 +208,7 @@ export default {
     display: none;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -230,10 +226,10 @@ export default {
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
     border-radius: 10px 0px 0px 10px;
-    height: 90vh;
+   height: auto;
   }
   .four2 h6{
-    color: #94004F;
+    color: #15213B;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -282,11 +278,11 @@ export default {
     padding: 1rem 0.5rem;
   }
   .sin h3{
-     color:#94004F ; 
+     color:#15213B ; 
   }
   .sin1 button{
     width: 100%;
-    background: #94004F;
+    background: #15213B;
     border-radius: 3px;
     margin-top: 0.5rem;
     border: none;
@@ -327,7 +323,7 @@ export default {
     margin-right: 0.5rem;
   }
     .three{
-    background: #ED017F;
+    background: #15213B;
     padding: 5px 10px;
   }
   .three li{
@@ -349,7 +345,7 @@ export default {
     display: none;
   }
   .three li button{
-    background: #94004F;
+    background: #15213B;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
@@ -362,7 +358,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 1rem;
   }
@@ -434,7 +430,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -479,7 +475,7 @@ export default {
 
   @media(min-width: 769px) and (max-width:1200px){
     .three{
-    background: #ED017F;
+    background: #15213B;
     padding: 5px 10px;
   }
   .three li{
@@ -512,7 +508,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #ED017F;
+    background: #15213B;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
