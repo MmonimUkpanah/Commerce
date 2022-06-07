@@ -24,24 +24,24 @@
           </div>
           <div class="four3">
             <div class="four31">
-              <div>
-                <img src="/img/bud.svg" alt="">
+              <div class="four311">
+                <img src="~assets/a.jpeg" alt="">
               </div>
               <div>
                 <div class="four32">
-                  <img src="/img/k.svg" alt="">
+                  <img src="/new/b.jpeg" alt="">
                 </div>
-                <div>
-                  <img src="/img/k.svg" alt="">
+                <div class="four33">
+                  <img src="/new/c.jpeg" alt="">
                 </div>
               </div>
             </div>
             <div class="four4">
             <div class="four41">
-              <img src="/img/db.svg" alt="">
+              <img src="/new/d.jpeg" alt="">
             </div>
             <div class="four42">
-              <img src="/img/gh.svg" alt="">
+              <img src="/new/e.jpeg" alt="">
             </div>
           </div>
           </div>
@@ -368,8 +368,19 @@ export default {
     grid-template-columns: 3fr 1fr;
     grid-gap: 1rem;
   }
+  .four311 img{
+    height: 26rem;
+    
+
+  }
   .four32{
     margin-bottom: 1.6rem;
+  }
+  .four32 img{
+    height: 13rem;
+  }
+  .four33 img{
+    height: 13rem;
   }
   .four4{
     display: grid;
@@ -379,12 +390,12 @@ export default {
   }
   .four41 img{
     width: 106%;
-    
+    height: 12rem;
    
   }
   .four42 img{
     width: 100%;
-    
+    height: 12rem;
   }
   .five{
     background: #15213B;
