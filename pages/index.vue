@@ -370,8 +370,7 @@ export default {
   }
   .four311 img{
     height: 26rem;
-    
-
+  
   }
   .four32{
     margin-bottom: 1.6rem;
@@ -502,6 +501,25 @@ export default {
     width: 100%;
     margin-left: auto;
     text-align: center;
+  }
+  .four311 img{
+    height: auto;
+  
+  }
+   .four32 img{
+    height: auto;
+  }
+  .four33 img{
+    height: auto;
+  }
+  .four41 img{
+    width: 106%;
+    height: auto;
+   
+  }
+  .four42 img{
+    width: 100%;
+    height: auto;
   }
   .s{
     display: none;

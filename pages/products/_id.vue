@@ -250,6 +250,10 @@
     grid-template-columns: 1fr;
     row-gap: 1rem;
   }
+  .one11 img{
+    width: 100%;
+    height: auto;
+  }
   }
 
   
