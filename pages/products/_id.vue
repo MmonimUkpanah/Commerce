@@ -229,7 +229,7 @@
   }
     .one1{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     row-gap: 1rem;
   }
   .one3{
