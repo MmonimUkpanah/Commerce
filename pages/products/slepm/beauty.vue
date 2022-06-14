@@ -5,21 +5,33 @@
             <div class="four">
         <div class="four1">
           <div class="four2 s">
-            <h6>ATOMY    +</h6>
-            <a href="/products/atomy/beauty"><p>- Beauty Products </p></a>
-            <a href="/products/atomy/body"><p>- Body and Wellness</p></a>
-            <a href="/products/atomy/health"><p>- Health Product</p></a>
-            <h6>ENAGIC KANGEN   +</h6>
-            <a href="/products/enagic/water"><p>- Water Machines</p></a>
-            <a href="/products/enagic/health"><p>- Supplements</p></a>
-            <h6>RAINBOW REXAIR    +</h6>
-            <a href="/products/rainbow/cleaningmachines"><p>- Cleaning Machines</p></a>
-            <a href="/products/rainbow/solutions"><p>- Cleaning Solutions</p></a>
-            <h6>QUIARI    +</h6>
-            <a href="/products/quiari/energy"><p>- Quiari Energy</p></a>
-            <a href="/products/quiari/shake"><p>- Quiari Shake</p></a>
-            <h6>SLEPM    +</h6>
-            <a href="/products/slepm/beauty"><p>- Beauty Products</p></a>
+            <h6 @click="displayAtomy">ATOMY    <span v-show="!showAtomy">+</span><span v-show="showAtomy">-</span></h6>
+            <div v-show="showAtomy">
+              <a href="/products/atomy/beauty"><p>- Beauty Products </p></a>
+              <a href="/products/atomy/body"><p>- Body and Wellness</p></a>
+              <a href="/products/atomy/health"><p>- Health Product</p></a>
+            </div>
+            <h6 @click="displayEnagic">ENAGIC KANGEN   <span v-show="!showEnagic">+</span><span v-show="showEnagic">-</span></h6>
+            <div v-show="showEnagic">
+              <a href="/products/enagic/water"><p>- Water Machines</p></a>
+              <a href="/products/enagic/health"><p>- Supplements</p></a>
+            </div>
+            
+            <h6 @click="displayRain">RAINBOW REXAIR    <span v-show="!showRain">+</span><span v-show="showRain">-</span></h6>
+            <div v-show="showRain">
+              <a href="/products/rainbow/cleaningmachines"><p>- Cleaning Machines</p></a>
+              <a href="/products/rainbow/solutions"><p>- Cleaning Solutions</p></a>
+            </div>
+            <h6 @click="displayQ">QUIARI    <span v-show="!showQ">+</span><span v-show="showQ">-</span></h6>
+            <div v-show="showQ">
+              <a href="/products/quiari/energy"><p>- Quiari Energy</p></a>
+              <a href="/products/quiari/shake"><p>- Quiari Shake</p></a>
+            </div>     
+            <h6 @click="displaySlepm">SLEPM    <span v-show="!showSlepm">+</span><span v-show="showSlepm">-</span></h6>
+            <div v-show="showSlepm">
+              <a href="/products/slepm/beauty"><p>- Beauty Products</p></a>
+            </div>
+            
             
           </div>
           <div class="sin">
@@ -76,7 +88,12 @@ export default {
       categories:{},
       category1:{},
       category2:{},
-      category3:{}
+      category3:{},
+      showAtomy:false,
+      showEnagic:false,
+      showRain:false,
+      showQ:false,
+      showSlepm:false
     }
   },
   mounted(){
@@ -87,6 +104,41 @@ export default {
     // this.getHealthCategory2()
   },
   methods:{
+    displayAtomy(){
+      if (this.showAtomy == true){
+        this.showAtomy = false
+      }else if(this.showAtomy == false){
+        this.showAtomy = true
+      }
+    },
+    displayEnagic(){
+      if (this.showEnagic == true){
+        this.showEnagic = false
+      }else if(this.showEnagic == false){
+        this.showEnagic = true
+      }
+    },
+    displayRain(){
+      if (this.showRain == true){
+        this.showRain = false
+      }else if(this.showRain == false){
+        this.showRain = true
+      }
+    },
+    displayQ(){
+      if (this.showQ == true){
+        this.showQ = false
+      }else if(this.showQ == false){
+        this.showQ = true
+      }
+    },
+    displaySlepm(){
+      if (this.showSlepm == true){
+        this.showSlepm = false
+      }else if(this.showSlepm == false){
+        this.showSlepm = true
+      }
+    },
     getCategories() {
       this.$axios.get( "https://direshop777.herokuapp.com/api/categories/5/")
         .then((response) => {
