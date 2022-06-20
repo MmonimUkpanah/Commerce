@@ -225,7 +225,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: #15213B;
+    background: #0D99FF;
     padding: 0px 5rem;
   }
   .three li{
@@ -260,7 +260,7 @@ export default {
     display: none;
   }
   .four{
-    background: #15213B;
+    background: white;
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -275,13 +275,13 @@ export default {
   .four2{
     padding-left:1rem;
     padding-top: 10px;
-    background: rgba(255, 255, 255, 0.9);
+    background: #0D99FF;
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
     border-radius: 10px 0px 0px 10px;
     height: auto;
   }
   .four2 h6{
-    color: #15213B;
+    color: black;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -295,7 +295,7 @@ export default {
     color: black;
   }
   .sin{
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     color: black;
     padding: 10px 10px;
   }
@@ -330,11 +330,11 @@ export default {
     padding: 1rem 0.5rem;
   }
   .sin h3{
-     color:#15213B ; 
+     color:#0D99FF ; 
   }
   .sin1 button{
     width: 100%;
-    background: #15213B;
+    background: #0D99FF;
     border-radius: 3px;
     margin-top: 0.5rem;
     border: none;
@@ -375,7 +375,7 @@ export default {
     margin-right: 0.5rem;
   }
     .three{
-    background: #15213B;
+    background: #0D99FF;
     padding: 5px 10px;
   }
   .three li{
@@ -397,7 +397,7 @@ export default {
     display: none;
   }
   .three li button{
-    background: #15213B;
+    background: #0D99FF;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
@@ -410,7 +410,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #15213B;
+    background: #0D99FF;
     padding: 0px 10px;
     padding-bottom: 1rem;
   }
@@ -482,9 +482,12 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #15213B;
+    background: white;
     padding: 0px 10px;
     padding-bottom: 10px;
+  }
+  .four2{
+    padding-left: 0.5rem;
   }
   .four2 ul li::before{
     content: "\2022";
@@ -516,7 +519,7 @@ export default {
   } */
   .sin4{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: 1rem;
     box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -527,7 +530,7 @@ export default {
 
   @media(min-width: 769px) and (max-width:1200px){
     .three{
-    background: #15213B;
+    background: #0D99FF;
     padding: 5px 10px;
   }
   .three li{
@@ -560,7 +563,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #15213B;
+    background:white;
     padding: 0px 10px;
     padding-bottom: 10px;
   }

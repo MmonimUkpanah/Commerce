@@ -165,7 +165,7 @@ export default {
         column-gap: 1rem;
     }
     .active{
-        background: #15213B;
+        background: #0D99FF;
         color: white ;
     }
 
@@ -192,7 +192,7 @@ export default {
     
     button{
         width: 100%;
-        background-color: #15213B;
+        background-color: #0D99FF;
         border: none;
         color: white;
         font-weight: 700;
@@ -200,7 +200,7 @@ export default {
     }
     button:active{
         width: 100%;
-        background-color: #15213B;
+        background-color: #0D99FF;
         border: none;
         color: white;
         font-weight: 700;
@@ -208,19 +208,19 @@ export default {
     }
     button:focus{
         width: 100%;
-        background-color: #15213B;
+        background-color: #0D99FF;
         border: none;
         color: white;
         font-weight: 700;
         margin-top: 1rem;
     }
     .s, .l{
-        color: #15213B;
+        color: #0D99FF;
         padding-left: 0.5rem;
         border-radius: 5px;
     }
     .active{
-        background: #15213B;
+        background: #0D99FF;
         color: white !important;
     }
 

@@ -175,7 +175,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: #15213B;
+    background: white;
     padding: 0px 5rem;
   }
   .three li{
@@ -203,27 +203,35 @@ export default {
     margin-right: 1rem;
   }
   .navbar-nav li button{
-    background: #FBA100;
+    background: #0D99FF;
     border-radius: 10px;
     padding: 5.5px 20px;
     border: none;
     color: white;
   }
+  .navbar-nav li span a{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+  }
   .navbar-nav li span{
     font-size: 20px;
     font-weight: 500;
-    color: white;
+    color: black;
   }
-  a{
+  .four a{
     color: white;
     text-decoration: none;
     
+  }
+  a{
+    text-decoration: none;
   }
   .threesmall{
     display: none;
   }
   .four{
-    background: #29A67A;
+    background: #0D99FF;
     color: white;
     padding: 5px 85px;
   }
@@ -241,7 +249,7 @@ export default {
   }
 
 .dash{
-  background: #15213B !important;
+  background: white !important;
 }
 .navbar-toggler{
   background: white;
@@ -273,13 +281,13 @@ export default {
   padding: 0 5rem;
 }
 .cart{
-    background: #29A67A;
+    background: rgba(0, 0, 0, 0.4);;
     display: inline;
     color: white;
-    border-radius: 50%;
+    border-radius: 5px;
     height: 0.5rem;
     width: 0.5rem;
-    padding: 0.3rem;
+    padding: 0.5rem;
     margin-left: 1rem;
   }
 
@@ -296,7 +304,7 @@ export default {
     margin-right: 1rem;
   }
   .navbar-nav li button{
-    background: #FBA100;
+    background: #0D99FF;
     border-radius: 10px;
     padding: 5.5px 20px;
     width: 100%;
@@ -350,7 +358,7 @@ export default {
     display: block;
   }
   .four{
-    background: #29A67A;
+    background: #0D99FF;
     color: white;
     padding: 5px 10px;
   }
@@ -374,7 +382,7 @@ export default {
    overflow-x: hidden;
  }
   .four{
-    background: #29A67A;
+    background: #0D99FF;
     color: white;
     padding: 5px 10px;
   }
@@ -448,7 +456,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #29A67A;
+    background: #0D99FF;
     color: white;
     padding: 5px 10px;
   }

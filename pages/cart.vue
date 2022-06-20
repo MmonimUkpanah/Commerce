@@ -154,16 +154,16 @@
     background: #E5E5E5;
     padding-top: 10vh;
     padding-bottom: 10vh;
-    color: #15213B;
+    color: #0D99FF;
 }
 .but{
-    background: #15213B;
+    background: #0D99FF;
     color: white;
     width: 100%;
     border: none;
 }
 .cart24{
-    color: #15213B !important;
+    color: #0D99FF !important;
 }
 .cart1{
     padding: 1rem 1rem;

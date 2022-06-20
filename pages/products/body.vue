@@ -182,7 +182,7 @@ export default {
     margin-right: 1rem;
   }
   .three{
-    background: #15213B;
+    background: #ED017F;
     padding: 0px 5rem;
   }
   .three li{
@@ -217,7 +217,7 @@ export default {
     display: none;
   }
   .four{
-    background: #15213B;
+    background: white;
     padding: 0px 5rem;
     padding-bottom: 1rem;
   }
@@ -238,7 +238,7 @@ export default {
     height: auto;
   }
   .four2 h6{
-    color: #15213B;
+    color: black;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -252,7 +252,7 @@ export default {
     color: black;
   }
   .sin{
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     color: black;
     padding: 10px 10px;
   }
@@ -293,7 +293,7 @@ export default {
   }
   .sin1 button{
     width: 100%;
-    background: #15213B;
+    background:  #0D99FF;
     border-radius: 3px;
     margin-top: 0.5rem;
     border: none;
@@ -317,14 +317,14 @@ export default {
 
 
   @media(max-width:576px){
-    .s{
-    display: none;
-  }
     .one1{
     background-color: rgb(255, 148, 0);
     width: 100%;
     margin-left: auto;
     text-align: center;
+  }
+  .s{
+    display: none;
   }
     .two ul li{
     display: inline;
@@ -369,7 +369,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #15213B;
+    background: #0D99FF;
     padding: 0px 10px;
     padding-bottom: 1rem;
   }
@@ -411,6 +411,14 @@ export default {
     background: rgba(80, 199, 255, 0.5);
     padding: 5px 10px;
   }
+  .four2{
+    padding-left:0.5rem;
+    padding-top: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 0px 0px 10px;
+    height: 70vh;
+  }
   .three li{
     list-style: none;
     display: inline;
@@ -441,7 +449,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #15213B;
+    background: #0D99FF;
     padding: 0px 10px;
     padding-bottom: 10px;
   }
@@ -519,7 +527,7 @@ export default {
     font-weight: 500;
   }
   .four{
-    background: #15213B;
+    background: #0D99FF;
     padding: 0px 10px;
     padding-bottom: 10px;
   }

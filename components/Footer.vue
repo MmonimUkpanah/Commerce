@@ -22,22 +22,7 @@
                 <p>Privacy Policy</p>
                </div>
             </div>
-            <div class="sec1">
-                <div class="four">
-                <p class="title">Resources</p>
-                <p>Free Ebooks</p>
-                <p>Development Tutorial</p>
-                <p>How to - Blog</p>
-                <p>Youtube Playlist</p>
-            </div>
-            <div class="five">
-                <p class="title">Extra Links</p>
-                <p>Customer Support</p>
-                <p>Delivery Details</p>
-                <p>Terms and Conditions</p>
-                <p>Privacy Policy</p>
-            </div>
-            </div>
+            
             
             
         </section>
@@ -49,12 +34,12 @@
 <style scoped>
     footer{
         padding: 2rem 5rem;
-        background: #000000;
-        color: #F2F2F2;
+        background:  #E7E6E2;
+        color: #000000;
     }
     footer p:hover{
         
-        color: #2B59FF;
+        color: #0D99FF;
     }
     .finito{
         display: grid;
@@ -75,7 +60,7 @@
         width: 5rem;
     }
     .one button{
-        background: #29A67A;
+        background: #0D99FF;
         border-radius: 5px;
         padding: 5px 20px;
         border: none;
@@ -107,7 +92,7 @@
         text-align: center;
     }
     .one button{
-        background: #29A67A;
+        background: #0D99FF;
         border-radius: 5px;
         padding: 5px 20px;
         border: none;

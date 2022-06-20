@@ -112,7 +112,7 @@
     height: 10rem;
   }
   .one12 button, b-button{
-    background: #15213B;
+    background: #0D99FF;
     color: #fff;
     width: 100%;
     border: none;
@@ -132,7 +132,7 @@
     grid-template-columns: 1fr 1fr;
   }
   .one31 p{
-    color: #15213B;
+    color:  #0D99FF;
     font-weight: 16px;
     text-transform: uppercase;
   }
@@ -141,7 +141,7 @@
     margin-right: 1rem;
   }
   .one32 p{
-    color: #15213B;
+    color: #0D99FF;
     font-weight: 16px;
     text-transform: uppercase;
   }
@@ -161,7 +161,7 @@
     column-gap: 2rem;
   }
   .two1 #product{
-    color: #15213B;
+    color: #0D99FF;
     font-size: 18px;
 
   }
@@ -178,7 +178,7 @@
    
  }
  .formcart .span1{
-   background: #15213B;
+   background: #0D99FF;
    color: white;
    height: 1.7rem;
    width: 1.7rem;
@@ -187,7 +187,7 @@
    cursor: pointer;
  }
  .formcart .span2{
-   background: #15213B;
+   background: #0D99FF;
    color: white;
    height: 1.7rem;
    width: 1.7rem;
@@ -205,7 +205,7 @@
     margin-top: 0rem;
   }
    #modal-1 button{
-    background: #15213B;
+    background: #0D99FF;
     color: #fff;
     width: 100%;
     border: none;
@@ -214,7 +214,11 @@
   }
   
 
-
+@media(max-width:567px){
+  .one31{
+    text-align: center;
+  }
+}
 
 
   @media(max-width:768px){
